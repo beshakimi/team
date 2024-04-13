@@ -31,7 +31,7 @@ export default function Hero() {
       </div>
 
       <div className='absolute top-16 left-0 w-1/2 h-full flex flex-col gap-8 pt-10 pl-32'>
-        <h1 className='text-5xl text-[#e87a35] leading-tight font-bold'>Welocome to our Website</h1>
+        <h1 className='text-5xl text-[#e87a35] leading-tight font-bold'>Welcome to our Website</h1>
         <p className=''>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime sed ipsa eveniet doloremque, eligendi, placeat, magni quis rem soluta voluptates minus illum natus officia neque maiores sequi rerum at autem!</p>
 
       </div>

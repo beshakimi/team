@@ -1,11 +1,11 @@
 
 import './App.css';
-import Hero from './Components/Hero';
+import Home from './Pages/Home';
 
 function App() {
   return (
    <div className='w-full'>
-    <Hero/>
+   <Home/>
     
    </div>
   )
