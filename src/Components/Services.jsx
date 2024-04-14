@@ -11,8 +11,6 @@ export default function Services() {
             <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Services</h1>
             <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
-
-
             {/* services  */}
             <div className='grid grid-cols-2 gap-6 mt-6'>
               
