@@ -10,7 +10,7 @@ export default function About() {
 
             {/* about our team  */}
             <div className='grid grid-cols-2 gap-4'>
-                <img src="media/images/about.jpg" className='w-full rounded-sm' />
+                <img src="media/images/about.jpg" alt='About our team' className='w-full rounded-sm' />
 
                 <div className='p-4 flex flex-col gap-4'>
                     <h1 className='text-3xl text-[#e87a35] font-bold'>About Our Team</h1>
@@ -41,15 +41,14 @@ export default function About() {
             </div>
 
             {/* our team  */}
-
             <div className='w-[95%] mx-auto flex flex-col gap-4 mt-10'>
                 <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Our Team</h1>
                 <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
                 <div className='grid grid-cols-3 gap-6 mt-10'>
 
                     {/* person 1 */}
-                    <div className='rounded-xl bg-[#ffe0cc] p-5 flex flex-col gap-2'>
-                        <img src="media/team/user.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-xl' />
+                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                        <img src="media/team/user.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
                         <p className='text-sm text-gray-500 text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing. Incidunt recusandae minima repellendus sapiente, soluta mollitia sit. Impedit quo perspiciatis enim.</p>
@@ -69,8 +68,8 @@ export default function About() {
                     </div>
 
                     {/* person 2 */}
-                    <div className='rounded-xl bg-[#ffe0cc] p-5 flex flex-col gap-2'>
-                        <img src="media/team/1.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-xl' />
+                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                        <img src="media/team/1.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
                         <p className='text-sm text-gray-500 text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing. Incidunt recusandae minima repellendus sapiente, soluta mollitia sit. Impedit quo perspiciatis enim.</p>
@@ -91,8 +90,8 @@ export default function About() {
 
 
                     {/* person 3 */}
-                    <div className='rounded-xl bg-[#ffe0cc] p-5 flex flex-col gap-2'>
-                        <img src="media/team/3.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-xl' />
+                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                        <img src="media/team/3.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
                         <p className='text-sm text-gray-500 text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing. Incidunt recusandae minima repellendus sapiente, soluta mollitia sit. Impedit quo perspiciatis enim.</p>
@@ -112,8 +111,8 @@ export default function About() {
                     </div>
 
                     {/* person 4 */}
-                    <div className='rounded-xl bg-[#ffe0cc] p-5 flex flex-col gap-2'>
-                        <img src="media/team/2.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-xl' />
+                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                        <img src="media/team/2.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
                         <p className='text-sm text-gray-500 text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing. Incidunt recusandae minima repellendus sapiente, soluta mollitia sit. Impedit quo perspiciatis enim.</p>
@@ -133,8 +132,8 @@ export default function About() {
                     </div>
 
                     {/* person 5 */}
-                    <div className='rounded-xl bg-[#ffe0cc] p-5 flex flex-col gap-2'>
-                        <img src="media/team/5.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-xl' />
+                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                        <img src="media/team/5.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
                         <p className='text-sm text-gray-500 text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing. Incidunt recusandae minima repellendus sapiente, soluta mollitia sit. Impedit quo perspiciatis enim.</p>
@@ -155,8 +154,8 @@ export default function About() {
 
 
                     {/* person 6 */}
-                    <div className='rounded-xl bg-[#ffe0cc] p-5 flex flex-col gap-2'>
-                        <img src="media/team/4.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-xl' />
+                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                        <img src="media/team/4.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
                         <p className='text-sm text-gray-500 text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing. Incidunt recusandae minima repellendus sapiente, soluta mollitia sit. Impedit quo perspiciatis enim.</p>

@@ -8,7 +8,7 @@ export default function Hero() {
       <img src="media/images/welcome.jpg" alt="welcome image" className='w-full h-full object-cover' />
       
       {/* navbar  */}
-      <div className='absolute top-0 left-0 w-full px-10 py-2 bg-[#e87a35] bg-opacity-80 flex justify-between items-center'>
+      <div className='fixed top-0 left-0 w-full px-10 py-2 bg-[#e87a35] bg-opacity-70 flex justify-between items-center'>
 
         <div className='flex gap-6 items-center'>
           <img src="media/logo/logo.png" alt="site logo" className='w-16' />

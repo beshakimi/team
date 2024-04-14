@@ -1,6 +1,8 @@
 import React from 'react'
 import About from '../Components/About'
 import Hero from '../Components/Hero'
+import Portfolio from '../Components/Portfolio'
+import Services from '../Components/Services'
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
         <Hero/>
         <div className='flex flex-col gap-10 w-[80%] mx-auto mt-10'>
             <About/>
+            <Portfolio/>
+            <Services/>
 
         </div>
     </div>
