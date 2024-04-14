@@ -3,6 +3,7 @@ import About from '../Components/About'
 import Hero from '../Components/Hero'
 import Portfolio from '../Components/Portfolio'
 import Services from '../Components/Services'
+import Contact from '../Components/Contact'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
             <About/>
             <Portfolio/>
             <Services/>
+            <Contact/>
 
         </div>
     </div>
