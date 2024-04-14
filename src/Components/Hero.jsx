@@ -2,14 +2,16 @@ import React from 'react'
 import { Link } from 'react-scroll'
 
 
+
 export default function Hero() {
   return (
     <div className='w-full h-[500px] relative'>
       <img src="media/images/welcome.jpg" alt="welcome image" className='w-full h-full object-cover' />
       
       {/* navbar  */}
-      <div className='fixed top-0 left-0 z-20 w-full px-10 py-2 bg-[#e87a35] bg-opacity-70 flex justify-between items-center'>
+      {/* <div className='fixed top-0 left-0 z-20 w-full bg-[#f6f0ec] flex justify-between items-center'>
 
+        <Header/>
         <div className='flex gap-6 items-center'>
           <img src="media/logo/logo.png" alt="site logo" className='w-16' />
           <div className='flex gap-4 items-center'>
@@ -28,7 +30,7 @@ export default function Hero() {
 
         </div>
 
-      </div>
+      </div> */}
 
       <div className='absolute top-16 left-0 w-1/2 h-full flex flex-col gap-8 pt-10 pl-32'>
         <h1 className='text-5xl text-[#e87a35] leading-tight font-bold'>Welcome to our Website</h1>
