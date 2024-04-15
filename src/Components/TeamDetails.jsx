@@ -26,7 +26,7 @@ import { IoClose } from "react-icons/io5";
 
 export default function TeamDetails({showModal}) {
     return (
-        <div className='flex flex-col gap-10 w-[80%] h-screen mx-auto my-6 '>
+        <div className='flex flex-col gap-10 w-[80%] h-screen mx-auto mt-6 mb-10 '>
             <IoClose onClick={()=> showModal(false)} className='absolute top-6 right-6 w-6 h-6 text-white border hover:cursor-pointer hover:border-orange-400 hover:bg-orange-400 ease-in duration-150'/>
             <div className='w-full flex gap-4'>
 
@@ -148,14 +148,14 @@ export default function TeamDetails({showModal}) {
 
                     {/* image and information */}
                     <div className='grid grid-cols-3 gap-4'>
-                        <img src="media/team/8.jpg" alt="image" className='col-span-1 w-full h-96 object-cover' />
+                        <img src="media/team/8.jpg" alt="image" className='col-span-1 w-full h-80 object-cover' />
 
                         <div className='col-span-2 flex flex-col gap-2'>
                             <h1 className='font-semibold text-gray-700'>Hello I'm front-end Developer | UI Designer</h1>
                             <p className='text-sm text-gray-600'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor tempore veniam distinctio aliquid aliquam ratione, beatae, unde soluta maiores tenetur obcaecati consequatur minus a quas cupiditate odio cum impedit voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo similique qui impedit ullam assumenda mollitia corrupti voluptates iste, eos libero dolorem omnis deserunt veniam numquam veritatis exercitationem ex est.</p>
 
                             {/* phone,address,email  */}
-                            <div className='flex flex-col gap-2 mt-10'>
+                            <div className='flex flex-col gap-2 mt-6'>
 
                                 {/* address  */}
                                 <div className='flex gap-2 items-center mt-2'>
@@ -198,7 +198,7 @@ export default function TeamDetails({showModal}) {
                             {/* skill 1 */}
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
-                                    <PiFileHtmlFill className='p-2 w-10 h-10 bg-orange-500 text-white' />
+                                    <PiFileHtmlFill className='p-2 w-10 h-10 rounded-sm bg-orange-500 text-white' />
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold uppercase text-orange-500'>Html</h1>
                                         <p className='text-orange-500 text-xs font-semibold'>expert in html5</p>
@@ -215,7 +215,7 @@ export default function TeamDetails({showModal}) {
                             {/* skill 2 */}
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
-                                    <FaCss3Alt className='p-2 w-10 h-10 bg-orange-500 text-white' />
+                                    <FaCss3Alt className='p-2 w-10 h-10 rounded-sm bg-orange-500 text-white' />
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold uppercase text-orange-500'>css</h1>
                                         <p className='text-orange-500 font-semibold text-xs'>Lorem ipsum dolor sit amet.</p>
@@ -232,7 +232,7 @@ export default function TeamDetails({showModal}) {
                             {/* skill 3 */}
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
-                                    <DiJavascript1 className='p-2 w-10 h-10 bg-orange-500 text-white' />
+                                    <DiJavascript1 className='p-2 w-10 h-10 rounded-sm bg-orange-500 text-white' />
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold text-orange-500'>JavaScript</h1>
                                         <p className='text-orange-500 font-semibold text-xs'>Lorem ipsum dolor sit amet.</p>
@@ -249,7 +249,7 @@ export default function TeamDetails({showModal}) {
                             {/* skill 4 */}
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
-                                    <RiReactjsLine className='p-2 w-10 h-10 bg-orange-500 text-white' />
+                                    <RiReactjsLine className='p-2 w-10 h-10 rounded-sm bg-orange-500 text-white' />
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold text-orange-500'>React JS</h1>
                                         <p className='text-orange-500 font-semibold text-xs'>Lorem ipsum dolor sit amet.</p>
@@ -266,7 +266,7 @@ export default function TeamDetails({showModal}) {
                             {/* skill 5 */}
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
-                                    <SiTailwindcss className='p-2 w-10 h-10 bg-orange-500 text-white' />
+                                    <SiTailwindcss className='p-2 w-10 h-10 rounded-sm bg-orange-500 text-white' />
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold text-orange-500'>Tailwind CSS</h1>
                                         <p className='text-orange-500 font-semibold text-xs'>Lorem ipsum dolor sit amet.</p>
@@ -283,7 +283,7 @@ export default function TeamDetails({showModal}) {
                             {/* skill 6 */}
                             <div className='flex flex-col gap-1'>
                                 <div className='flex gap-2'>
-                                    <TbSeo className='p-2 w-10 h-10 bg-orange-500 text-white' />
+                                    <TbSeo className='p-2 w-10 h-10 rounded-sm bg-orange-500 text-white' />
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold text-orange-500'>SEO</h1>
                                         <p className='text-orange-500 font-semibold text-xs'>Lorem ipsum dolor sit amet.</p>

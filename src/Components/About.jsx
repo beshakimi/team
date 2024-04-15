@@ -49,7 +49,7 @@ export default function About() {
                 <div className='grid grid-cols-3 gap-6 mt-10'>
 
                     {/* person 1 */}
-                    <div onClick={()=> showModal(true)} className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2 hover:cursor-pointer hover:shadow-lg hover:shadow-orange-300 hover:scale-105 ease-in duration-150'>
+                    <div onClick={()=> showModal(true)} className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2 hover:cursor-pointer hover:shadow-lg hover:shadow-orange-300 ease-in duration-150'>
                         <img src="media/team/user.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
@@ -181,7 +181,7 @@ export default function About() {
 
             {/* modal */}
             {modal && 
-            <div className='z-30 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50'>
+            <div className='z-30 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 overflow-scroll no-scroll'>
                 <TeamDetails showModal={showModal}/>
             </div>
             }
