@@ -34,8 +34,8 @@ export default function Header() {
 
                 {/* search */}
                 <form action="" className='h-9 overflow-hidden rounded-md flex items-center bg-orange-100'>
-                    <input type="text" placeholder='What are you looking for?' className='text-sm text-orange-500 placeholder:text-orange-400 bg-transparent py-[6px] px-2 w-96 focus:outline-none' />
-                    <button className='w-16 h-full bg-orange-400 flex justify-center items-center'>
+                    <input type="text" placeholder='What are you looking for?' className='text-sm border-2 border-orange-100 text-orange-500 placeholder:text-orange-400 rounded-l-md bg-transparent h-full px-2 w-96 focus:border-orange-400 focus:outline-none' />
+                    <button className='w-16 h-full bg-orange-400 flex justify-center items-center hover:bg-orange-500 transition-all duration-200'>
                         <FaSearch className='text-white' />
                     </button>
                 </form>

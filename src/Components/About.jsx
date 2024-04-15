@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import TeamDetails from './TeamDetails';
 
 export default function About() {
+    const [modal, showModal] = useState(false);
     return (
         <div className='bg-white p-6 rounded-sm'>
 
@@ -47,7 +49,7 @@ export default function About() {
                 <div className='grid grid-cols-3 gap-6 mt-10'>
 
                     {/* person 1 */}
-                    <div className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2'>
+                    <div onClick={()=> showModal(true)} className='rounded-md bg-[#ffe0cc] p-5 flex flex-col gap-2 hover:cursor-pointer hover:shadow-lg hover:shadow-orange-300 hover:scale-105 ease-in duration-150'>
                         <img src="media/team/user.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover rounded-md' />
                         <h1 className='text-sm text-gray-600 uppercase'>Front-end Developer</h1>
                         <h2 className='text-lg font-bold text-[#e87a35]'>Besmillah Hakimi</h2>
@@ -176,6 +178,14 @@ export default function About() {
 
                 </div>
             </div>
+
+            {/* modal */}
+            {modal && 
+            <div className='z-30 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50'>
+                <TeamDetails showModal={showModal}/>
+            </div>
+            }
+
         </div>
     )
 }
