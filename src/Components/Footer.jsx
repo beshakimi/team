@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+import { Link, animateScroll } from 'react-scroll'
 
 
 import { FaLocationDot } from "react-icons/fa6";
@@ -12,10 +12,15 @@ import { IoServer } from "react-icons/io5";
 import { GiGlowingArtifact } from "react-icons/gi";
 
 export default function Footer() {
+
+    const scrollToTop = () => {
+        animateScroll.scrollToTop();
+    };
+
     return (
         <div className='bg-white pt-10 mt-10 flex flex-col gap-6'>
 
-            <div className='grid grid-cols-3 md:w-[80%] mx-auto'>
+            <div className='grid grid-cols-4 md:w-[80%] mx-auto'>
 
                 {/* Get in Touch */}
                 <div className='flex flex-col gap-2 text-gray-600'>
@@ -112,6 +117,25 @@ export default function Footer() {
 
                 </div>
 
+                {/* Our Team */}
+                <div className='flex flex-col gap-2 text-gray-600'>
+                    <h1 className='text-orange-500 font-bold text-xl'>Our Team</h1>
+
+                    <div className='flex gap-2 mt-2 text-sm'>
+                        <img src="media/team/1.jpg" alt="user 1" className='w-12 h-12 object-cover' />
+                        <img src="media/team/2.jpg" alt="user 2" className='w-12 h-12 object-cover' />
+                        <img src="media/team/3.jpg" alt="user 3" className='w-12 h-12 object-cover' />
+                        <img src="media/team/4.jpg" alt="user 4" className='w-12 h-12 object-cover' />
+                    </div>
+
+                    <div className='flex gap-2 text-sm'>
+                        <img src="media/team/5.jpg" alt="user 4" className='w-12 h-12 object-cover' />
+                        <img src="media/team/6.jpg" alt="user 4" className='w-12 h-12 object-cover' />
+                    </div>
+
+
+                </div>
+
             </div>
 
             <div className='md:w-[80%] mx-auto py-4 border-t-2 border-gray-400 grid grid-cols-3'>
@@ -121,9 +145,9 @@ export default function Footer() {
                     <p className='text-sm flex gap-1 items-center'>Built by our team with <span className='text-red-500 text-xl'>♥</span></p>
                 </div>
 
-                <div className='flex justify-end items-center'>
-                    <img src="media/icons/up-arrow.png" alt="" className='w-7 h-7 hover:cursor-pointer hover:animate-bounce transition-all duration-300'/>
-                </div>
+                <Link to="#" smooth={true} duration={500} onClick={scrollToTop} className='flex justify-end items-center'>
+                    <img src="media/icons/up-arrow.png" alt="" className='w-7 h-7 hover:cursor-pointer hover:animate-bounce transition-all duration-300' />
+                </Link>
             </div>
         </div>
     )

@@ -22,21 +22,21 @@ export default function Contact() {
                         {/* address  */}
                         <div className='flex flex-col gap-2 p-4 justify-center items-center bg-[#e87a35] w-40 h-40 '>
                             <FaLocationDot className='w-16 h-16 text-white' />
-                            <h1 className='text-xs font-bold uppercase'>Our Main Address</h1>
+                            <h1 className='text-xs text-gray-700 font-bold uppercase'>Our Main Address</h1>
                             <p className='text-sm'>Kabul Afghanistan</p>
                         </div>
 
                         {/* phone  */}
                         <div className='flex flex-col gap-2 p-4 justify-center items-center bg-[#e87a35] w-40 h-40 '>
                             <PiPhoneThin className='w-16 h-16 text-white' />
-                            <h1 className='text-xs font-bold uppercase'>phone number</h1>
+                            <h1 className='text-xs text-gray-700 font-bold uppercase'>phone number</h1>
                             <p className='text-sm'>+93 799877326</p>
                         </div>
 
                         {/* email  */}
                         <div className='flex flex-col gap-2 p-6 justify-center items-center bg-[#e87a35] w-40 h-40 '>
                             <HiOutlineMail className='w-16 h-16 text-white' />
-                            <h1 className='text-xs font-bold uppercase'>email</h1>
+                            <h1 className='text-xs text-gray-700 font-bold uppercase'>email</h1>
                             <p className='text-sm'>our@gmail.com</p>
                         </div>
 
