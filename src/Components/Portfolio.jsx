@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ProjectDetails from './ProjectDetails';
 
 import { TbWorld } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa6";
 import { CgMoreO } from "react-icons/cg";
 
 export default function Portfolio() {
+    const [details, showDetails] = useState(false);
     return (
         <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
             <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Projects</h1>
@@ -45,9 +47,7 @@ export default function Portfolio() {
                                 <FaGithub className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
                             </a>
 
-                            <a href="">
-                                <CgMoreO className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
+                            <CgMoreO onClick={() => showDetails(true)} className='w-6 h-6 text-gray-500 hover:cursor-pointer hover:text-gray-700 transition-all duration-150' />
                         </div>
                     </div>
 
@@ -104,6 +104,13 @@ export default function Portfolio() {
                 </div>
 
             </div>
+
+            {/* details */}
+            {details && 
+            <div className='z-30 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 overflow-scroll no-scroll'>
+                <ProjectDetails modal={showDetails}/>
+            </div>
+            }
 
         </div>
     )
