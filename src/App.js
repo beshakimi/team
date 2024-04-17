@@ -12,7 +12,6 @@ function App() {
     innerScale={1}
     outerScale={2}
     outerAlpha={0}
-    hasBlendMode={true}
     outerStyle={{
       border: '2px solid rgb(235, 137, 52)'
     }}
