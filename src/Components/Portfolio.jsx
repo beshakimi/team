@@ -20,6 +20,7 @@ export default function Portfolio() {
                     <h1 className='px-4 py-1 bg-[#e87a35] text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150'>Website</h1>
 
                     <h1 className='px-4 py-1 bg-[#e87a35] text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150'>Mobile</h1>
+                    <h1 className='px-4 py-1 bg-[#e87a35] text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150'>Machin Learning</h1>
 
 
                 </div>
