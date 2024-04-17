@@ -28,7 +28,7 @@ import { IoClose } from "react-icons/io5";
 export default function TeamDetails({showModal}) {
     return (
         <div className='flex flex-col gap-10 w-[80%] h-screen mx-auto mt-6 mb-10 '>
-            <IoClose onClick={()=> showModal(false)} className='absolute top-6 right-6 w-6 h-6 text-white border hover:cursor-pointer hover:border-orange-400 hover:bg-orange-400 ease-in duration-150'/>
+            <IoClose onClick={()=> showModal(false)} className='fixed top-6 right-6 w-6 h-6 text-white border hover:cursor-pointer hover:border-orange-400 hover:bg-orange-400 ease-in duration-150'/>
             <div className='w-full flex gap-4'>
 
                 {/* profile  */}
@@ -38,7 +38,7 @@ export default function TeamDetails({showModal}) {
                     <div className='pt-6 bg-white rounded-md flex flex-col gap-2 justify-center items-center'>
                         <img src="media/team/user.jpg" alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
                         <h1 className='font-bold'>Besmill Hakimi</h1>
-                        <ReactTyped strings={["Front-end Developer", "UI Designer"]} typeSpeed={100} loop className='bg-orange-200 py-1 px-2 rounded-full text-orange-500 font-semibold text-sm' />
+                        <ReactTyped strings={["Front-end Developer", "UI Designer"]} typeSpeed={100} backSpeed={30} loop className='bg-orange-200 py-1 px-2 rounded-full text-orange-500 font-semibold text-sm' />
                         
                         {/* years,per-hour,projects  */}
                         <div className='mt-6 w-full grid grid-cols-3'>
