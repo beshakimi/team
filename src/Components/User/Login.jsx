@@ -17,7 +17,7 @@ export default function Login() {
 
 
                 <div className='col-span-2 px-6 flex flex-col gap-4 bg-white justify-center relative'>
-                    
+
                     {/* close icon  */}
                     <Link to='/' className='absolute top-4 right-4 w-6 h-6 flex items-center justify-center text-orange-400 rounded-md border border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>
                         <IoClose />
@@ -25,11 +25,11 @@ export default function Login() {
 
                     {/* login  */}
                     <div className='flex flex-col gap-2'>
-                        <h1 className='text-2xl font-bold text-orange-400 '>Loge in</h1>
-                        <p className='text-sm text-gray-500'>Enter valid email & password to contenue </p>
+                        <h1 className='text-2xl font-bold w-full text-center text-orange-400 '>Loge in</h1>
+                        <p className='text-sm w-full text-center text-gray-500'>Enter valid email & password to contenue </p>
                     </div>
 
-                    <form action="" className='flex flex-col gap-4'>
+                    <form action="" className='flex flex-col gap-4 mt-2'>
 
                         {/* email  */}
                         <div className='flex gap-2 input items-center'>
@@ -48,9 +48,11 @@ export default function Login() {
                             <div className='ml-1 flex gap-2 items-center'>
                                 <input type='checkbox' className='checked:border-orange-400' />
                                 <p className='text-sm text-gray-500'>Remember me</p>
-                            </div>
 
-                            <p className='text-sm text-orange-400 hover:cursor-pointer hover:underline ease-in duration-150'>Forget password</p>
+                            </div>
+                            <Link to='/forgetPassword'>
+                                <p className='text-sm text-orange-400 hover:cursor-pointer hover:underline ease-in duration-150'>Forget password</p>
+                            </Link>
                         </div>
 
                         {/* login  */}
@@ -87,7 +89,7 @@ export default function Login() {
                         <div className='flex gap-1 justify-center mt-4'>
                             <p className='text-gray-500'>Haven't any account?</p>
                             <Link to='/signUp'>
-                            <p className='font-semibold text-orange-400 hover:cursor-pointer hover:underline ease-in duration-150'>Sign Up</p>
+                                <p className='font-semibold text-orange-400 hover:cursor-pointer hover:underline ease-in duration-150'>Sign Up</p>
                             </Link>
                         </div>
                     </form>
