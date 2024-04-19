@@ -37,7 +37,7 @@ export default function TeamDetails({showModal}) {
                     {/* avatar and more  */}
                     <div className='pt-6 bg-white rounded-md flex flex-col gap-2 justify-center items-center'>
                         <img src="media/team/user.jpg" alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
-                        <h1 className='font-bold'>Besmill Hakimi</h1>
+                        <h1 className='font-bold'>Besmillah Hakimi</h1>
                         <ReactTyped strings={["Front-end Developer", "UI Designer"]} typeSpeed={100} backSpeed={30} loop className='bg-orange-200 py-1 px-2 rounded-full text-orange-500 font-semibold text-sm' />
                         
                         {/* years,per-hour,projects  */}
@@ -144,7 +144,7 @@ export default function TeamDetails({showModal}) {
                         <div className='p-2 rounded-full border-2 text-gray-400 border-100'>
                             <MdOutlineCastForEducation />
                         </div>
-                        <p className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>About Besmill Hakimi</p>
+                        <p className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>About Besmillah Hakimi</p>
                     </div>
 
                     {/* image and information */}

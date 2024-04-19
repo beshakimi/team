@@ -2,11 +2,14 @@
 import './App.css';
 import AnimatedCursor from "react-animated-cursor"
 import Home from './Pages/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './Components/User/Login';
+import SignUp from './Components/User/SignUp';
 
 function App() {
   return (
    <div className='w-full'>
-    <AnimatedCursor 
+    {/* <AnimatedCursor 
     innerSize={8}
     outerSize={35}
     innerScale={1}
@@ -15,9 +18,15 @@ function App() {
     outerStyle={{
       border: '2px solid rgb(235, 137, 52)'
     }}
-    
-    />
-   <Home/>
+    /> */}
+  <BrowserRouter> 
+    <Routes> 
+      <Route path='/' element={ <Home/>} />
+      <Route path='/login' element={<Login/>} />
+      <Route path='/signUp' element={<SignUp/>} />
+    </Routes>
+  </BrowserRouter>
+  
     
    </div>
   )
