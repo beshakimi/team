@@ -16,15 +16,13 @@ export default function SignUp() {
                 <img src="media/blog/5.jpg" alt="" className='col-span-3 h-[420px] object-cover' />
 
                 <div className='col-span-2 px-6 flex flex-col gap-4 bg-white justify-center relative'>
-                <Link to='/login' className='absolute top-4 right-4 w-6 h-6 flex items-center justify-center text-orange-400 rounded-md border border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>
-                        <IoClose  />
-                    </Link>
+                
                     <div className='flex flex-col gap-2'>
-                        <h1 className='text-2xl font-bold text-orange-400 '>Sign Up</h1>
-                        <p className='text-sm text-gray-500'>Use proper information to continue </p>
+                        <h1 className='w-full text-center text-2xl font-bold text-orange-400 '>Sign Up</h1>
+                        <p className='text-sm w-full text-center text-gray-500'>Use proper information to continue </p>
                     </div>
 
-                    <form action="" className='flex flex-col gap-4'>
+                    <form action="" className='flex flex-col gap-4 mt-2'>
 
                         {/* full name  */}
                         <div className='flex gap-2 input items-center'>
