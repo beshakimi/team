@@ -1,9 +1,12 @@
-import React from 'react'
-import { Link } from 'react-scroll'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FaSearch } from "react-icons/fa";
+import Login from './User/Login';
+
 
 
 export default function Header() {
+    
     return (
 
         <div className='flex w-full h-36 bg-white relative'>
@@ -40,11 +43,19 @@ export default function Header() {
                     </button>
                 </form>
 
-                <div className='flex gap-4'>
-                    <img src="media/users/1.jpg" alt="your profile" className='w-10 h-10 rounded-full object-cover border-2 border-[#e87a35] ' />
+                <div className='flex gap-4 h-fit items-center'>
+                    <div className='relative'>
+                        <img src="media/users/1.jpg" alt="your profile" className='w-10 h-10 rounded-full object-cover border-2 border-[#e87a35] ' />
+                    </div>
+                    <Link to='/login'>
+                    <p className='border px-2 py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>Log in</p>
+                    
+                    </Link>
                 </div>
             </div>
+
         </div>
+       
 
 
     )
