@@ -1,10 +1,14 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 import { TfiGallery } from "react-icons/tfi";
 
 
 export default function Portfolio() {
+  
+
     return (
+
         <div className=''>
 
             {/* icon and text  */}

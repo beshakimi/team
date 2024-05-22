@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './Components/User/Login';
 import SignUp from './Components/User/SignUp';
 import ForgetPassword from './Components/User/ForgetPassword';
+import TeamDetails from './Pages/TeamDetails';
 
 function App() {
   return (
@@ -23,9 +24,7 @@ function App() {
   <BrowserRouter> 
     <Routes> 
       <Route path='/' element={ <Home/>} />
-      <Route path='/login' element={<Login/>} />
-      <Route path='/signUp' element={<SignUp/>} />
-      <Route path='/forgetPassword' element={<ForgetPassword/>} />
+      <Route path='/developer/:id' element={<TeamDetails/>} />
     </Routes>
   </BrowserRouter>
   
