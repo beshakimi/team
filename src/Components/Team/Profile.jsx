@@ -1,16 +1,30 @@
 import React from 'react'
 import { ReactTyped } from "react-typed";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { FaShareNodes } from "react-icons/fa6";
 import { IoIosCloudDownload } from "react-icons/io";
 import { MdAttachEmail } from "react-icons/md";
 
-export default function Profile() {
+export default function Profile({Url, imageUrl}) {
+    const [profile, setProfile] = useState("");
+    const [role, setRole] = useState("");
+    
+
+    useEffect (() => {
+            axios.get(Url)
+            .then((res) => {
+                setProfile(res.data);
+                setRole(res.data.role);
+            })
+            
+    }, [])
     return (
         <div className='pt-6 bg-white rounded-md flex flex-col gap-2 justify-center items-center'>
-            <img src="media/team/user.jpg" alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
-            <h1 className='font-bold'>Besmillah Hakimi</h1>
-            <ReactTyped strings={["Front-end Developer", "UI Designer"]} typeSpeed={100} backSpeed={30} loop className='bg-orange-200 py-1 px-2 rounded-full text-orange-500 font-semibold text-sm' />
+            <img src={`${imageUrl}${profile.avatar}`} alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
+            <h1 className='font-bold'>{profile.firstname} {profile.lastname}</h1>
+            <ReactTyped strings={[role]} typeSpeed={100} backSpeed={30} loop className='bg-orange-200 py-1 px-2 rounded-full text-orange-500 font-semibold text-sm' />
 
             {/* years,per-hour,projects  */}
             <div className='mt-6 w-full grid grid-cols-3'>
