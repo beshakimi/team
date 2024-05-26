@@ -1,15 +1,27 @@
-import React, { useState } from 'react'
-import ProjectDetails from './ProjectDetails';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 import { TbWorld } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa6";
 import { CgMoreO } from "react-icons/cg";
+import axios from 'axios';
 
 export default function Portfolio() {
-    const [details, showDetails] = useState(false);
+    const [Portfolioes, setPortfolio] = useState([]);
+    const Url = 'http://127.0.0.1:8000/developers/projects'
+    const imageUrl = 'http://127.0.0.1:8000/';
+
+    useEffect(() => {
+        axios.get(Url)
+            .then((res) => {
+                setPortfolio(res.data);
+            })
+
+    }, []);
+
     return (
         <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
-            <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Projects</h1>
+            <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>projectts</h1>
             <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
             {/* menu  */}
@@ -28,90 +40,39 @@ export default function Portfolio() {
             </div>
 
             {/* portfolio list  */}
-
             <div className='grid grid-cols-3 gap-6 mt-6'>
 
-                {/* project 1 */}
-                <div className='border border-gray-400 flex flex-col gap-2'>
-                    <img src="media/projects/1.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover' />
+                {/* projectts */}
+                {Portfolioes.map(project => (
+                    <div key={project.id} className='border border-gray-400 flex flex-col gap-2'>
+                        <img src={`${imageUrl}${project.image}`} alt="Besmillah Hakimi" className='w-full h-60 object-cover' />
 
-                    <div className='flex flex-col gap-2 px-4 pb-4 justify-center'>
+                        <div className='flex flex-col gap-2 px-4 pb-4 justify-center'>
 
-                        <h1 className=' text-gray-800 font-semibold w-full text-center'>Project name</h1>
-                        <p className='text-sm text-gray-500 w-full text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing.perspiciatis enim.</p>
-                        <div className='flex gap-4 items-center justify-center'>
-                            <a href="">
-                                <TbWorld className='w-7 h-7 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
+                            <h1 className=' text-gray-800 font-semibold w-full text-center'>{project.title}</h1>
+                            <p className='text-sm text-gray-500 w-full text-center'>{project.description?.slice(0, 70)} ...</p>
+                            <div className='flex gap-4 items-center justify-center'>
+                                <a href={project.live_link}>
+                                    <TbWorld className='w-7 h-7 text-gray-500 hover:text-gray-700 transition-all duration-150' />
+                                </a>
 
-                            <a href="">
-                                <FaGithub className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
+                                <a href={project.github_link}>
+                                    <FaGithub className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
+                                </a>
 
-                            <CgMoreO onClick={() => showDetails(true)} className='w-6 h-6 text-gray-500 hover:cursor-pointer hover:text-gray-700 transition-all duration-150' />
+                                <Link to={`/projectt/${project.id}`}>
+                                    <CgMoreO className='w-6 h-6 text-gray-500 hover:cursor-pointer hover:text-gray-700 transition-all duration-150' />
+                                </Link>
+                            </div>
                         </div>
+
                     </div>
-
-                </div>
-
-                {/* project 2 */}
-                <div className='border border-gray-400 flex flex-col gap-2'>
-                    <img src="media/projects/2.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover' />
-
-                    <div className='flex flex-col gap-2 px-4 pb-4 justify-center'>
-
-                        <h1 className=' text-gray-800 font-semibold w-full text-center'>Project name</h1>
-                        <p className='text-sm text-gray-500 w-full text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing.perspiciatis enim.</p>
-                        <div className='flex gap-4 items-center justify-center'>
-                            <a href="">
-                                <TbWorld className='w-7 h-7 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
-
-                            <a href="">
-                                <FaGithub className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
-
-                            <a href="">
-                                <CgMoreO className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                {/* project 3 */}
-                <div className='border border-gray-400 flex flex-col gap-2'>
-                    <img src="media/projects/3.jpg" alt="Besmillah Hakimi" className='w-full h-60 object-cover' />
-
-                    <div className='flex flex-col gap-2 px-4 pb-4 justify-center'>
-
-                        <h1 className=' text-gray-800 font-semibold w-full text-center'>Project name</h1>
-                        <p className='text-sm text-gray-500 w-full text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing.perspiciatis enim.</p>
-                        <div className='flex gap-4 items-center justify-center'>
-                            <a href="">
-                                <TbWorld className='w-7 h-7 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
-
-                            <a href="">
-                                <FaGithub className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
-
-                            <a href="">
-                                <CgMoreO className='w-6 h-6 text-gray-500 hover:text-gray-700 transition-all duration-150' />
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
+                ))
+                }
 
             </div>
 
-            {/* details */}
-            {details && 
-            <div className='z-30 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 overflow-scroll no-scroll'>
-                <ProjectDetails modal={showDetails}/>
-            </div>
-            }
+
 
         </div>
     )
