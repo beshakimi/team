@@ -31,7 +31,7 @@ export default function PostDetails() {
             .then((res) => {
                 setPostDetails(res.data);
             })
-    }, [])
+    }, [id])
     return (
         <div className='bg-orange-100 py-10'>
             <div className='w-[80%] mx-auto bg-white'>
@@ -85,16 +85,21 @@ export default function PostDetails() {
                         </FacebookShareButton>
 
                         {/* linkden */}
-                        <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#03a5fc] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
-                            <FaLinkedin />
-                            <p>Share on Linkedln</p>
-                        </div>
+                        <LinkedinShareButton url={shareUrl}>
+                            <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#03a5fc] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
+                                <FaLinkedin />
+                                <p>Share on Linkedln</p>
+                            </div>
+                        </LinkedinShareButton>
 
-                        {/* linkden */}
-                        <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#b5417d] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
-                            <LuInstagram />
-                            <p>Share on Instagram</p>
-                        </div>
+                        {/* instagram */}
+                        <InstapaperShareButton url={shareUrl}>
+                            <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#b5417d] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
+                                <LuInstagram />
+                                <p>Share on Instagram</p>
+                            </div>
+                        </InstapaperShareButton>
+
 
 
 
