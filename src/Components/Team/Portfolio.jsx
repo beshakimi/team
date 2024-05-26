@@ -2,10 +2,21 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 import { TfiGallery } from "react-icons/tfi";
+import { useParams } from 'react-router-dom';
 
 
 export default function Portfolio() {
+    const [Portfolioes, setPortfolio] = useState([]);
+    const {id} = useParams();
+    const ImageUrl = 'http://127.0.0.1:8000/';
+    const Url = `http://127.0.0.1:8000/developers/${id}/projects`;
   
+    useEffect(()=>{
+        axios.get(Url)
+        .then((res) =>{
+            setPortfolio(res.data);
+        })
+    }, [])
 
     return (
 
@@ -22,12 +33,15 @@ export default function Portfolio() {
             </div>
 
             <div className='mt-4 grid grid-cols-3 gap-4'>
-                <img src="media/projects/1.jpg" className='w-full h-40 object-cover' />
-                <img src="media/projects/2.jpg" className='w-full h-40 object-cover' />
-                <img src="media/projects/3.jpg" className='w-full h-40 object-cover' />
-                <img src="media/projects/2.jpg" className='w-full h-40 object-cover' />
-                <img src="media/projects/3.jpg" className='w-full h-40 object-cover' />
-                <img src="media/projects/1.jpg" className='w-full h-40 object-cover' />
+                {Portfolioes.map(portfolio =>(
+                    <div className='w-full h-40 overflow-hidden'>
+                        <img src={`${ImageUrl}${portfolio.image}`} className='w-full h-full object-cover hover:scale-105 hover:cursor-pointer ease-in duration-200' />
+
+                    </div>
+                ))
+
+                }
+                
 
             </div>
         </div>
