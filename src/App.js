@@ -10,6 +10,8 @@ import TeamDetails from './Pages/TeamDetails';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ProjectDetails from './Pages/ProjectDetails';
+import { ImOpt } from 'react-icons/im';
+import PostDetails from './Pages/PostDetails';
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/developer/:id' element={<TeamDetails />} />
           <Route path='/project/:id' element ={<ProjectDetails/>} />
+          <Route path='/post/:id' element={<PostDetails/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
