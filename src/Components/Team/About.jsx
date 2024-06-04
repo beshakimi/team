@@ -19,7 +19,7 @@ export default function About({url, imageUrl}) {
     return (
         <div className='flex flex-col gap-4'>
             {/* icon and name  */}
-            <div className='flex gap-2 items-center'>
+            <div className='flex gap-2 items-center hover:cu'>
 
                 {/* icon  */}
                 <div className='p-2 rounded-full border-2 text-gray-400 border-100'>
@@ -30,7 +30,7 @@ export default function About({url, imageUrl}) {
 
             {/* image and information */}
             <div className='grid grid-cols-3 gap-4'>
-                <img src={`${imageUrl}${developer.avatar}`} alt="image" className='col-span-1 w-full h-80 object-cover' />
+                <img src={`${imageUrl}${developer.detail_image}`} alt="image" className='col-span-1 w-full h-80 object-cover' />
 
                 <div className='col-span-2 flex flex-col gap-2'>
                     <h1 className='font-semibold text-gray-700'>Hello I'm {developer.role}</h1>
