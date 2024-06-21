@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import { IoClose } from "react-icons/io5";
 import Experience from '../Components/Team/Experience';
@@ -10,11 +9,22 @@ import Skills from '../Components/Team/Skills';
 import Portfolio from '../Components/Team/Portfolio';
 import GetInTouch from '../Components/Team/GetInTouch';
 import SotialMedia from '../Components/Team/SotialMedia';
+import { Link, animateScroll as scroll } from 'react-scroll';
+
+
 
 export default function TeamDetails() {
     const { id } = useParams();
     const aboutUrl = `http://127.0.0.1:8000/developers/${id}`;
-    const imageUrl = 'http://127.0.0.1:8000'
+    const imageUrl = 'http://127.0.0.1:8000';
+
+
+    function scrollToMessage() {
+        const messageElement = document.getElementById('messages');
+        if (messageElement) {
+          messageElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
 
     return (
         <div className='bg-orange-100 h-full w-full '>
@@ -22,7 +32,7 @@ export default function TeamDetails() {
 
                 {/* profile  */}
                 <div className='flex flex-col gap-4'>
-                    <Profile Url={aboutUrl} imageUrl={imageUrl} />
+                    <Profile scrollToMessage ={scrollToMessage}  Url={aboutUrl} imageUrl={imageUrl} />
                     <SotialMedia Url={aboutUrl} />
 
                 </div>
@@ -34,7 +44,7 @@ export default function TeamDetails() {
                     <Skills />
                     <Experience />
                     <Portfolio />
-                    <GetInTouch />
+                    <GetInTouch id="messages" />
 
                 </div>
 
