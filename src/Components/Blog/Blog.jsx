@@ -36,7 +36,7 @@ export default function Blog() {
       <div className='grid grid-cols-2 gap-6 my-8'>
 
         {/* LastPost */}
-        <Link to={`post/${LastPost.id}`}>
+        <Link onClick={() => window.scrollTo(0,0)} to={`post/${LastPost.id}`}>
           <div className='flex flex-col gap-4 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
             <div className='w-full relative'>
               <img src={`${imageUrl}${LastPost.image}`} alt="" className='w-full hover:scale-105 ease-in duration-200' />
@@ -77,7 +77,7 @@ export default function Blog() {
 
           {/* All Posts*/}
           {AllPosts.map(post => (
-            <Link key={post.id} to={`post/${post.id}`}>
+            <Link onClick={() => window.scrollTo(0,0)} key={post.id} to={`post/${post.id}`}>
               <div className='flex flex-col gap-1 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
 
                 {/* image */}

@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <div className='bg-orange-100 bg-opacity-50'>
       
-      <Hero />
+      <Hero id ='hero' />
 
       <div className='flex flex-col gap-10 w-[80%] mx-auto mt-10'>
-        <About />
-        <Portfolio />
-        <Services />
-        <Blog/>
-        <Contact />
+        <About id = 'about'  />
+        <Portfolio id = 'portfolio' />
+        <Services id = 'serveices' />
+        <Blog id = 'blog'/>
+        <Contact id = 'contact' />
       </div>
       
     </div>
