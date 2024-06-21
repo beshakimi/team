@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 import { TfiGallery } from "react-icons/tfi";
 import { useParams } from 'react-router-dom';
@@ -34,10 +35,10 @@ export default function Portfolio() {
 
             <div className='mt-4 grid grid-cols-3 gap-4'>
                 {Portfolioes.map(portfolio =>(
-                    <div className='w-full h-40 overflow-hidden'>
+                    <Link onClick={()=> window.scrollTo(0,0)} to={`/project/${portfolio.id}`} className='w-full h-40 overflow-hidden'>
                         <img src={`${ImageUrl}${portfolio.image}`} className='w-full h-full object-cover hover:scale-105 hover:cursor-pointer ease-in duration-200' />
 
-                    </div>
+                    </Link>
                 ))
 
                 }

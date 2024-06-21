@@ -1,22 +1,43 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 import { IoClose } from "react-icons/io5";
+import { useParams } from 'react-router-dom';
 
-export default function ProjectDetails({ modal }) {
+export default function ProjectDetails() {
+
+    const [projectDetails, setProjectDetails] = useState([]);
+    const { id } = useParams();
+    const imageUrl = 'http://127.0.0.1:8000/'
+    const url = `http://127.0.0.1:8000/developers/projects/${id}`
+
+    useEffect(() => {
+        axios.get(url)
+            .then((res) => {
+                setProjectDetails(res.data);
+            }, [])
+    })
     return (
-        <div className='flex flex-col gap-10 lg:w-[60%] h-screen mx-auto mt-6 mb-20 xl:mb-32'>
-            <IoClose onClick={() => modal(false)} className='fixed top-6 right-6 w-6 h-6 text-white border hover:cursor-pointer hover:border-orange-400 hover:bg-orange-400 ease-in duration-150' />
+        <div className='bg-orange-100 w-full h-full flex flex-col gap-10'>
 
-            <div className='w-full flex flex-col gap-4 bg-white '>
-                <img src="media/projects/1.jpg" className='w-full' />
-                <div className='px-6 pb-6 flex flex-col gap-2'>
-                    <h1 className='font-semibold text-rose-400'>Learning Website</h1>
-                    <p className='text-sm text-gray-600'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, minus numquam iste exercitationem impedit nobis deserunt incidunt unde dolor, eaque eum odit fugiat perspiciatis eius earum porro nam? Obcaecati, labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quibusdam mollitia tempora iusto reiciendis, nemo, suscipit delectus, natus qui iure autem facilis magnam aperiam enim. Placeat ipsa ducimus voluptatem pariatur.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, minus numquam iste exercitationem impedit nobis deserunt incidunt unde dolor, eaque eum odit fugiat perspiciatis eius earum porro nam? Obcaecati, labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quibusdam mollitia tempora iusto reiciendis, nemo, suscipit delectus, natus qui iure autem facilis magnam aperiam enim. Placeat ipsa ducimus voluptatem pariatur.
-                    </p>
-                    <video src="media/video/1.mp4" controls playIcon='media/icon/1.png'
+            <div className='w-full lg:w-[60%] mx-auto flex flex-col gap-4 bg-white p-10 my-10 '>
+                <img src={`${imageUrl}${projectDetails.image}`} className='w-full max-h-96 object-cover' />
+                <div className='pb-6 flex flex-col gap-2'>
+                    <h1 className='font-semibold text-rose-400'> <span className='text-black'>Project Name:</span> {projectDetails.title}</h1>
+                    <p className='text-sm text-gray-600'>{projectDetails.description}</p>
+                    <div className='flex gap-4 mt-4'>
+                    <h3 className='text-sm font-semibold'>Technologies:</h3>
+                        {projectDetails?.technologies?.map((technology, index) => (
+                            <p key={index} className='text-sm px-1 bg-orange-500 text-white '>{technology}</p>
+                        ))}
+                    </div>
+                    <video src={`${imageUrl}${projectDetails.video}`} controls
                         className=' mt-4'></video>
-                    <a href="" className='mt-4 w-fit px-4 py-2 border border-orange-400 text-gray-700 hover:text-white hover:underline hover:bg-orange-400 ease-in transition-all duration-150'>View Project</a>
+                    <div className='flex gap-4'>
+                        <a href={projectDetails.live_link} target='_blank' className='mt-4 w-fit px-4 py-[6px] border border-orange-400 text-gray-700 hover:text-white hover:underline hover:bg-orange-400 hover:cursor-pointer ease-in transition-all duration-150'>View Project</a>
+                        <a href={projectDetails.github_link} target='_blank' className='mt-4 w-fit px-4 py-[6px] border border-orange-400 text-gray-700 hover:text-white hover:underline hover:bg-orange-400 hover:cursor-pointer ease-in transition-all duration-150'>GitHub Link</a>
+
+                    </div>
                 </div>
 
 

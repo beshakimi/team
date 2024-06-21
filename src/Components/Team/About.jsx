@@ -29,7 +29,7 @@ export default function About({url, imageUrl}) {
             </div>
 
             {/* image and information */}
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-3 gap-6'>
                 <img src={`${imageUrl}${developer.detail_image}`} alt="image" className='col-span-1 w-full h-80 object-cover' />
 
                 <div className='col-span-2 flex flex-col gap-2'>

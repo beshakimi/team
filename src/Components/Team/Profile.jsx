@@ -1,5 +1,6 @@
 import React from 'react'
 import { ReactTyped } from "react-typed";
+import { saveAs } from 'file-saver';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import clipboardCopy from 'clipboard-copy';
@@ -8,6 +9,7 @@ import { IoIosCloudDownload } from "react-icons/io";
 import { MdAttachEmail } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { MdOutlineContentCopy } from "react-icons/md";
+
 
 import {
     EmailIcon,
@@ -25,7 +27,7 @@ import {
     WhatsappShareButton,
 } from "react-share";
 
-export default function Profile({ Url, imageUrl }) {
+export default function Profile({ Url, imageUrl, scrollToMessage }) {
     const [profile, setProfile] = useState("");
     const [role, setRole] = useState("");
     const [share, setShare] = useState(false);
@@ -48,7 +50,16 @@ export default function Profile({ Url, imageUrl }) {
                 setRole(res.data.role);
             })
 
-    }, [])
+    }, []);
+
+    const handleDownloadCV = () => {
+        const cvUrl = `${imageUrl}${profile.cv}`;
+        saveAs(cvUrl, 'cv.pdf');
+      };
+
+ 
+
+    
     return (
         <div className='pt-6 bg-white rounded-md flex flex-col gap-2 justify-center items-center'>
             <img src={`${imageUrl}${profile.avatar}`} alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
@@ -83,16 +94,16 @@ export default function Profile({ Url, imageUrl }) {
                 </div>
 
                 {/* download cv */}
-                <div className='flex gap-1 items-center whitespace-nowrap rounded-full text-sm py-1 px-3 border border-orange-400 text-orange-500 hover:cursor-pointer hover:bg-orange-400 hover:text-white ease-in duration-150'>
+                <div  onClick={handleDownloadCV} className='flex gap-1 items-center whitespace-nowrap rounded-full text-sm py-1 px-3 border border-orange-400 text-orange-500 hover:cursor-pointer hover:bg-orange-400 hover:text-white ease-in duration-150'>
                     <IoIosCloudDownload className='' />
                     <p>Download CV</p>
                 </div>
 
-                <div className='flex gap-1 items-center rounded-full text-sm py-1 px-3 border border-orange-400 text-orange-500 hover:cursor-pointer hover:bg-orange-400 hover:text-white ease-in duration-150'>
+                {/* message  */}
+                <div onClick={scrollToMessage} className='flex gap-1 items-center rounded-full text-sm py-1 px-3 border border-orange-400 text-orange-500 hover:cursor-pointer hover:bg-orange-400 hover:text-white ease-in duration-150'>
                     <MdAttachEmail className='' />
                     <p>Message</p>
                 </div>
-
             </div>
 
             {share && <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-30 z-30 flex justify-center items-center'>
@@ -146,7 +157,6 @@ export default function Profile({ Url, imageUrl }) {
                     {/* page ling and copy icon  */}
                     <div className='flex flex-col gap-2'>
                         <p className='font-semibold'>Page Link</p>
-
                         <div className='relative border rounded-md px-2 py-1  flex items-center justify-between'>
                             <p className='text-gray-400'>{shareUrl}</p>
                             <MdOutlineContentCopy onClick={handleCopy} className='text-gray-500 hover:text-orange-600 hover:cursor-pointer ease-in duration-150' />

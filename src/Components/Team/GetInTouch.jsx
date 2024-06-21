@@ -5,7 +5,7 @@ import { GrContact } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-export default function GetInTouch() {
+export default function GetInTouch(props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -74,7 +74,7 @@ export default function GetInTouch() {
         }
     };
     return (
-        <div className=''>
+        <div id ={props.id} className=''>
 
             {successMessage && <div className=' fixed z-50 top-10 right-0 flex  w-full justify-center text-green-500'>
                 <p className='bg-orange-200 py-2 px-4 rounded-md'> {successMessage}</p>

@@ -25,7 +25,7 @@ export default function Header() {
             {/* nav items  */}
             <div className='absolute bottom-0 w-full h-fit py-3 bg-orange-400 flex justify-center'>
                 <div className='flex gap-4 items-center'>
-                    <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Home</Link>
+                    <Link to="hero" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Home</Link>
                     <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">About Us</Link>
                     <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Portfolio</Link>
                     <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Services</Link>
