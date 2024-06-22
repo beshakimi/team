@@ -27,7 +27,7 @@ export default function TeamDetails() {
       }
 
     return (
-        <div className='bg-orange-100 h-full w-full '>
+        <div className='bg-orange-100 h-full w-full mt-36 '>
             <div className='flex gap-4 w-[80%] mx-auto py-10 '>
 
                 {/* profile  */}

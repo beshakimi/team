@@ -104,8 +104,8 @@ export default function Footer() {
                     <div className='flex gap-10 mt-2 text-sm'>
                         <div className='flex flex-col gap-2'>
                             <Link to="blog" smooth={true} spy={true} offset={50} className="border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Home</Link>
-                            <Link to="blog" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">About Us</Link>
-                            <Link to="blog" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Portfolio</Link>
+                            <Link to="about" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">About Us</Link>
+                            <Link to="portfolio" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Portfolio</Link>
                         </div>
 
                         <div className='flex flex-col gap-2'>

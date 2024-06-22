@@ -6,7 +6,7 @@ import MobileProjects from './Portfolio/MobileProjects';
 import MachinLearningProjects from './Portfolio/MachinLearningProjects';
 
 
-export default function Portfolio() {
+export default function Portfolio(props) {
     const [allProjects, setAllProjects] = useState(true);
     const [websitProjects, setWebstiProjects] = useState(false);
     const [mobileProjects, setMobileProjects] = useState(false);
@@ -43,8 +43,8 @@ export default function Portfolio() {
   
 
     return (
-        <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
-            <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>projects</h1>
+        <div  className='bg-white p-6 rounded-sm flex flex-col gap-4'>
+            <h1 id ={props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Portfolio</h1>
             <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
             {/* menu  */}

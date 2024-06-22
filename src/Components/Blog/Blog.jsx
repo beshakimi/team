@@ -7,7 +7,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import axios from 'axios';
 
-export default function Blog() {
+export default function Blog(props) {
   const [LastPost, setLastPost] = useState([]);
   const [AllPosts, setAllPosts] = useState([]);
   const LastPostUrl = 'http://127.0.0.1:8000/posts/latest';
@@ -30,7 +30,7 @@ export default function Blog() {
 
   return (
     <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
-      <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
+      <h1 id = {props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
       <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
       <div className='grid grid-cols-2 gap-6 my-8'>

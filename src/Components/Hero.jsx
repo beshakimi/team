@@ -4,9 +4,9 @@ import { ReactTyped } from 'react-typed'
 
 
 
-export default function Hero(props) {
+export default function Hero() {
   return (
-    <div id= {props.id} className='w-full h-[500px] relative'>
+    <div className='mt-36 w-full h-[500px] relative'>
       <img src="media/images/welcome.jpg" alt="welcome image" className='w-full h-full object-cover' />
       
       {/* navbar  */}

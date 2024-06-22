@@ -14,6 +14,44 @@ import { ImOpt } from 'react-icons/im';
 import PostDetails from './Pages/PostDetails';
 
 function App() {
+
+  function scrollToAbout() {
+    const aboutElement = document.getElementById('about');
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function scrollToPortfolio() {
+    const portfolioElement = document.getElementById('portfolio');
+    if (portfolioElement) {
+      portfolioElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
+  function scrollToServices() {
+    const servicesElement = document.getElementById('services');
+    if (servicesElement) {
+      servicesElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function scrollToBlog() {
+    const blogElement = document.getElementById('blog');
+    if (blogElement) {
+      blogElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function scrollToContact() {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
   return (
     <div className='w-full'>
       {/* <AnimatedCursor 
@@ -29,9 +67,22 @@ function App() {
 
     
       <BrowserRouter>
-        <Header />
+        <Header
+        scrollToAbout ={scrollToAbout} 
+        scrollToPortfolio = {scrollToPortfolio}
+        scrollToServices = {scrollToServices}
+        scrollToBlog = {scrollToBlog}
+        scrollToContact = {scrollToContact}
+        />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home 
+          aboutId = 'about'
+          portfolioId = 'portfolio'
+          servicesId = 'services'
+          blogId = 'blog'
+          contactId = 'contact'
+           
+           />} />
           <Route path='/developer/:id' element={<TeamDetails />} />
           <Route path='/project/:id' element ={<ProjectDetails/>} />
           <Route path='/post/:id' element={<PostDetails/>} />

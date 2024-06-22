@@ -1,15 +1,23 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { animateScroll } from 'react-scroll'
 import { FaSearch } from "react-icons/fa";
 import Login from './User/Login';
 
 
 
-export default function Header() {
-    
+export default function Header({
+    scrollToHero,
+    scrollToAbout,
+    scrollToPortfolio,
+    scrollToServices,
+    scrollToBlog,
+    scrollToContact
+}) {
+
     return (
 
-        <div className='flex w-full h-36 bg-white relative'>
+        <div className='flex w-full h-36 bg-white fixed top-0 left-0 z-30'>
 
             <div style={{ clipPath: 'polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 0% 0%)' }} className='min-w-[320px] h-full bg-slate-700 flex justify-between relative z-10'>
 
@@ -25,11 +33,48 @@ export default function Header() {
             {/* nav items  */}
             <div className='absolute bottom-0 w-full h-fit py-3 bg-orange-400 flex justify-center'>
                 <div className='flex gap-4 items-center'>
-                    <Link to="hero" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Home</Link>
-                    <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">About Us</Link>
-                    <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Portfolio</Link>
-                    <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Services</Link>
-                    <Link to="blog" smooth={true} spy={true} offset={50} className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150">Contact Us</Link>
+
+                    <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
+                        onClick={() => {
+                            animateScroll.scrollToTop();
+                        }}
+                    >Home</Link>
+
+                    <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
+                        onClick={() => {
+                            setTimeout(() => {
+                                scrollToAbout();
+                            }, 100);
+                        }}>About Us</Link>
+
+
+                    <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
+                        onClick={() => {
+                            setTimeout(() => {
+                                scrollToPortfolio();
+                            }, 200);
+                        }}>Portfolio</Link>
+
+                    <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
+                        onClick={() => {
+                            setTimeout(() => {
+                                scrollToServices();
+                            }, 300);
+                        }}>Services</Link>
+
+                    <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
+                        onClick={() => {
+                            setTimeout(() => {
+                                scrollToBlog();
+                            }, 200);
+                        }}>Blog</Link>
+
+                    <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
+                        onClick={() => {
+                            setTimeout(() => {
+                                scrollToContact();
+                            }, 300);
+                        }}>Contact Us</Link>
                 </div>
             </div>
 
@@ -48,14 +93,14 @@ export default function Header() {
                         <img src="media/users/1.jpg" alt="your profile" className='w-10 h-10 rounded-full object-cover border-2 border-[#e87a35] ' />
                     </div>
                     <Link to='/login'>
-                    <p className='border px-2 py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>Log in</p>
-                    
+                        <p className='border px-2 py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>Log in</p>
+
                     </Link>
                 </div>
             </div>
 
         </div>
-       
+
 
 
     )
