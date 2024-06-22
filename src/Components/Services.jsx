@@ -5,14 +5,14 @@ import { BsPhoneFlip } from "react-icons/bs";
 import { IoServer } from "react-icons/io5";
 import { GiGlowingArtifact } from "react-icons/gi";
 
-export default function Services() {
+export default function Services(props) {
     return (
         <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
-            <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Services</h1>
+            <h1 id = {props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Services</h1>
             <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
             {/* services  */}
-            <div className='grid grid-cols-2 gap-6 mt-6'>
+            <div  className='grid grid-cols-2 gap-6 mt-6'>
               
                 {/* service 1 */}
                 <div className='flex'>

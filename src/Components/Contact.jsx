@@ -8,7 +8,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-export default function Contact() {
+export default function Contact(props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -83,7 +83,7 @@ export default function Contact() {
             {successMessage && <div className=' fixed z-50 top-10 right-0 flex  w-full justify-center text-green-500'>
                    <p className='bg-orange-200 py-2 px-4 rounded-md'> {successMessage}</p>
                 </div>}
-            <h1 className='text-3xl text-[#e87a35] font-bold w-full text-center '>Contact</h1>
+            <h1 id = {props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Contact</h1>
             <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
             <div className='relative bg-orange-200 mt-28 px-10 py-20 '>

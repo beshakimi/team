@@ -33,7 +33,7 @@ export default function PostDetails() {
             })
     }, [id])
     return (
-        <div className='bg-orange-100 py-10'>
+        <div className='bg-orange-100 py-10 mt-36'>
             <div className='w-[80%] mx-auto bg-white'>
                 <div className='flex flex-col gap-4 lg:w-[90%] mx-auto mt-6 p-6 xl:mb-32'>
                     <h1 className='text-4xl font-semibold text-orange-600'>{PostDetails.title}</h1>
