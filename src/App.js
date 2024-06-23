@@ -65,29 +65,35 @@ function App() {
     }}
     /> */}
 
-    
+
       <BrowserRouter>
         <Header
-        scrollToAbout ={scrollToAbout} 
-        scrollToPortfolio = {scrollToPortfolio}
-        scrollToServices = {scrollToServices}
-        scrollToBlog = {scrollToBlog}
-        scrollToContact = {scrollToContact}
+          scrollToAbout={scrollToAbout}
+          scrollToPortfolio={scrollToPortfolio}
+          scrollToServices={scrollToServices}
+          scrollToBlog={scrollToBlog}
+          scrollToContact={scrollToContact}
         />
         <Routes>
-          <Route path='/' element={<Home 
-          aboutId = 'about'
-          portfolioId = 'portfolio'
-          servicesId = 'services'
-          blogId = 'blog'
-          contactId = 'contact'
-           
-           />} />
+          <Route path='/' element={<Home
+            aboutId='about'
+            portfolioId='portfolio'
+            servicesId='services'
+            blogId='blog'
+            contactId='contact'
+
+          />} />
           <Route path='/developer/:id' element={<TeamDetails />} />
-          <Route path='/project/:id' element ={<ProjectDetails/>} />
-          <Route path='/post/:id' element={<PostDetails/>} />
+          <Route path='/project/:id' element={<ProjectDetails />} />
+          <Route path='/post/:id' element={<PostDetails />} />
         </Routes>
-        <Footer />
+        <Footer
+          scrollToAbout={scrollToAbout}
+          scrollToPortfolio={scrollToPortfolio}
+          scrollToServices={scrollToServices}
+          scrollToBlog={scrollToBlog}
+          scrollToContact={scrollToContact}
+        />
       </BrowserRouter>
 
 

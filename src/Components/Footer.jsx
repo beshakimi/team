@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link, animateScroll } from 'react-scroll'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import { animateScroll } from 'react-scroll'
 
 
 import { FaLocationDot } from "react-icons/fa6";
@@ -10,12 +11,31 @@ import { FaLaptopCode } from "react-icons/fa";
 import { BsPhoneFlip } from "react-icons/bs";
 import { IoServer } from "react-icons/io5";
 import { GiGlowingArtifact } from "react-icons/gi";
+import axios from 'axios';
 
-export default function Footer() {
+export default function Footer({
+    scrollToHero,
+    scrollToAbout,
+    scrollToPortfolio,
+    scrollToServices,
+    scrollToBlog,
+    scrollToContact
+}) {
 
     const scrollToTop = () => {
         animateScroll.scrollToTop();
     };
+
+    const [developersImage, setDevelopersImage] = useState([])
+    const url = 'http://127.0.0.1:8000/developers/';
+    const imageUrl = 'http://127.0.0.1:8000/';
+
+    useEffect (()=> {
+        axios.get(url)
+        .then ((res) => {
+            setDevelopersImage(res.data);
+        })
+    },[])
 
     return (
         <div className='bg-white pt-10 mt-10 flex flex-col gap-6'>
@@ -103,14 +123,48 @@ export default function Footer() {
 
                     <div className='flex gap-10 mt-2 text-sm'>
                         <div className='flex flex-col gap-2'>
-                            <Link to="blog" smooth={true} spy={true} offset={50} className="border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Home</Link>
-                            <Link to="about" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">About Us</Link>
-                            <Link to="portfolio" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Portfolio</Link>
+                            <Link to="/" className="border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
+                                onClick={() => {
+                                    animateScroll.scrollToTop();
+                                }}>Home</Link>
+
+                            <Link to="/" className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
+                                onClick={() => {
+                                    setTimeout(() => {
+                                        scrollToAbout();
+                                    }, 100);
+                                }}>About Us</Link>
+
+                            <Link to="/" className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
+                                onClick={() => {
+                                    setTimeout(() => {
+                                        scrollToPortfolio();
+                                    }, 200);
+                                }}>Portfolio</Link>
+
                         </div>
 
                         <div className='flex flex-col gap-2'>
-                            <Link to="blog" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Services</Link>
-                            <Link to="blog" smooth={true} spy={true} offset={50} className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150">Contact Us</Link>
+                            <Link to="/" className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
+                                onClick={() => {
+                                    setTimeout(() => {
+                                        scrollToServices();
+                                    }, 300);
+                                }}>Services</Link>
+
+                            <Link to="/" className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
+                                onClick={() => {
+                                    setTimeout(() => {
+                                        scrollToBlog();
+                                    }, 200);
+                                }}>Blog</Link>
+
+                            <Link to="/" className=" border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
+                                onClick={() => {
+                                    setTimeout(() => {
+                                        scrollToContact();
+                                    }, 200);
+                                }}>Contact Us</Link>
                         </div>
                     </div>
 
@@ -120,19 +174,12 @@ export default function Footer() {
                 {/* Our Team */}
                 <div className='flex flex-col gap-2 text-gray-600'>
                     <h1 className='text-orange-500 font-bold text-xl'>Our Team</h1>
+                    <div className='grid grid-cols-4 gap-2 mt-2'>
+                        {developersImage.map(developer => (
+                            <img key={developer.id} src={`${imageUrl}${developer.avatar}`} alt="developer avatar" className=' w-12 h-12 object-cover' />
 
-                    <div className='flex gap-2 mt-2 text-sm'>
-                        <img src="media/team/1.jpg" alt="user 1" className='w-12 h-12 object-cover' />
-                        <img src="media/team/2.jpg" alt="user 2" className='w-12 h-12 object-cover' />
-                        <img src="media/team/3.jpg" alt="user 3" className='w-12 h-12 object-cover' />
-                        <img src="media/team/4.jpg" alt="user 4" className='w-12 h-12 object-cover' />
+                        ))}
                     </div>
-
-                    <div className='flex gap-2 text-sm'>
-                        <img src="media/team/5.jpg" alt="user 4" className='w-12 h-12 object-cover' />
-                        <img src="media/team/6.jpg" alt="user 4" className='w-12 h-12 object-cover' />
-                    </div>
-
 
                 </div>
 

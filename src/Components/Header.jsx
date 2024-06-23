@@ -66,14 +66,14 @@ export default function Header({
                         onClick={() => {
                             setTimeout(() => {
                                 scrollToBlog();
-                            }, 200);
+                            }, 400);
                         }}>Blog</Link>
 
                     <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
                         onClick={() => {
                             setTimeout(() => {
                                 scrollToContact();
-                            }, 300);
+                            }, 400);
                         }}>Contact Us</Link>
                 </div>
             </div>

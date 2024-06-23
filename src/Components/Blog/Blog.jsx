@@ -10,8 +10,9 @@ import axios from 'axios';
 export default function Blog(props) {
   const [LastPost, setLastPost] = useState([]);
   const [AllPosts, setAllPosts] = useState([]);
+  const [page, changePage] = useState(1);
   const LastPostUrl = 'http://127.0.0.1:8000/posts/latest';
-  const AllPostUrl = 'http://127.0.0.1:8000/posts/';
+  const AllPostUrl = `http://127.0.0.1:8000/posts/?page=${page}`;
   const imageUrl = 'http://127.0.0.1:8000/';
 
   useEffect(() => {
@@ -26,17 +27,37 @@ export default function Blog(props) {
       .then((res) => {
         setAllPosts(res.data);
       })
-  }, []);
+  }, [page]);
+
+
+  const handlePreviosPage = () => {
+    if (page <= 1 ){
+      changePage(page)
+    }
+    else {
+      changePage(page - 1)
+    }
+  }
+
+  const handleNextPage = () => {
+    if (page <= AllPosts.length /4 ){
+      changePage(page + 1)
+    }
+    else {
+      changePage(page)
+    }
+  }
+
 
   return (
     <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
-      <h1 id = {props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
+      <h1 id={props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
       <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
       <div className='grid grid-cols-2 gap-6 my-8'>
 
         {/* LastPost */}
-        <Link onClick={() => window.scrollTo(0,0)} to={`post/${LastPost.id}`}>
+        <Link onClick={() => window.scrollTo(0, 0)} to={`post/${LastPost.id}`}>
           <div className='flex flex-col gap-4 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
             <div className='w-full relative'>
               <img src={`${imageUrl}${LastPost.image}`} alt="" className='w-full hover:scale-105 ease-in duration-200' />
@@ -77,7 +98,7 @@ export default function Blog(props) {
 
           {/* All Posts*/}
           {AllPosts.map(post => (
-            <Link onClick={() => window.scrollTo(0,0)} key={post.id} to={`post/${post.id}`}>
+            <Link onClick={() => window.scrollTo(0, 0)} key={post.id} to={`post/${post.id}`}>
               <div className='flex flex-col gap-1 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
 
                 {/* image */}
@@ -114,8 +135,8 @@ export default function Blog(props) {
                 </div>
               </div>
             </Link>
-              ))
-            
+          ))
+
           }
 
 
@@ -123,8 +144,10 @@ export default function Blog(props) {
 
         {/* pagination */}
         <div className='flex gap-2'>
-          <MdOutlineKeyboardArrowLeft className='w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150' />
-          <MdKeyboardArrowRight className='w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150' />
+          <MdOutlineKeyboardArrowLeft onClick={handlePreviosPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page <=1 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
+          {page}
+          {AllPosts.count}
+          <MdKeyboardArrowRight onClick={handleNextPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page > AllPosts.length /4 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
         </div>
 
       </div>

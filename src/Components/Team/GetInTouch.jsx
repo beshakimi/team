@@ -74,7 +74,7 @@ export default function GetInTouch(props) {
         }
     };
     return (
-        <div id ={props.id} className=''>
+        <div className=''>
 
             {successMessage && <div className=' fixed z-50 top-10 right-0 flex  w-full justify-center text-green-500'>
                 <p className='bg-orange-200 py-2 px-4 rounded-md'> {successMessage}</p>
@@ -87,7 +87,7 @@ export default function GetInTouch(props) {
                 <div className='p-2 rounded-full border-2 text-gray-400 border-100'>
                     <GrContact />
                 </div>
-                <p className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>Get in Touch</p>
+                <h1 id ={props.id} className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>Get in Touch</h1>
             </div>
 
             <form action="" className='flex flex-col gap-4 mt-4'>
