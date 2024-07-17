@@ -9,7 +9,7 @@ import { FiUser } from "react-icons/fi";
 
 export default function SignUp() {
     return (
-        <div className='bg-orange-100 h-screen py-10'>
+        <div className='bg-orange-100 bg-opacity-50 h-screen py-10 my-36'>
 
             <div className='grid grid-cols-5 lg:w-[60%] mx-auto mt-6 mb-10'>
 
@@ -42,11 +42,6 @@ export default function SignUp() {
                             <input type="password" placeholder='*************' className='w-full outline-none' />
                         </div>
 
-                        {/* privacy policy */}
-                            <div className='ml-1 flex gap-2 items-center'>
-                                <p className='text-center text-sm text-gray-500'>By signin up, you are agree to our <span className='text-orange-400 font-semibold hover:cursor-pointer hover:underline'>Terms & Privacy Policy</span></p>
-                            </div>
-
                         {/* sign up  */}
                         <input type="submit" value='Sign Up' className='w-full text-white py-[6px] rounded-md text-center bg-orange-400 hover:cursor-pointer hover:bg-orange-500 ease-in duration-150' />
 
@@ -54,7 +49,7 @@ export default function SignUp() {
                         {/* have not any account  */}
                         <div className='flex gap-1 justify-center mt-4'>
                             <p className='text-gray-500'>Already have an Account</p>
-                            <Link to='/login'>
+                            <Link onClick={() => {window.scrollTo(0,0)}} to='/login'>
                             <p className='font-semibold text-orange-400 hover:cursor-pointer hover:underline ease-in duration-150'>Log In</p>
                             </Link>
                         </div>
