@@ -3,10 +3,14 @@ import React, { useEffect, useState } from 'react'
 
 import { IoClose } from "react-icons/io5";
 import { useParams } from 'react-router-dom';
+import IsLoading from '../Components/isLoading/IsLoading';
+import Error from '../Components/Error/Error';
 
 export default function ProjectDetails() {
 
     const [projectDetails, setProjectDetails] = useState([]);
+    const [isLoading, setIsloading] = useState(true);
+    const [error, setError] = useState(false);
     const { id } = useParams();
     const imageUrl = 'http://127.0.0.1:8000/'
     const url = `http://127.0.0.1:8000/developers/projects/${id}`
@@ -16,7 +20,21 @@ export default function ProjectDetails() {
             .then((res) => {
                 setProjectDetails(res.data);
             })
+            .catch((error)=> {
+                setError(error.message);
+            })
+            .finally(() =>{
+                setIsloading(false)
+            })
     }, [])
+
+    if (isLoading) {
+        return <IsLoading/>
+    }
+
+    if (error) {
+        return <Error error = {error}/>
+    }
     return (
         <div className='bg-orange-100 bg-opacity-50 w-full h-full flex flex-col gap-10 mt-36'>
 

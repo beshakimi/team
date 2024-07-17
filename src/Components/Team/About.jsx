@@ -5,16 +5,33 @@ import { FaLocationDot } from "react-icons/fa6";
 import { PiPhoneThin } from "react-icons/pi";
 import { HiOutlineMail } from "react-icons/hi";
 import axios from 'axios';
-import Developers from '../About/Developers';
+import IsLoading from '../isLoading/IsLoading';
+import Error from '../Error/Error';
 
-export default function About({url, imageUrl}) {
-    const [developer, setDeveloper] = useState("");
-    const {id} = useParams();
+export default function About({ url, imageUrl }) {
+    const [developer, setDeveloper] = useState([]);
+    const [isLoading, setIsloading] = useState(true);
+    const [error, setError] = useState(false);
+    const { id } = useParams();
     useEffect(() => {
-        axios.get(url).then((res) =>{
+        axios.get(url).then((res) => {
             setDeveloper(res.data)
         })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => {
+                setIsloading(false);
+            })
     }, [])
+
+    if(isLoading) {
+        return <IsLoading/>
+    }
+
+    if(error) {
+        return <Error error = {error}/>
+    }
 
     return (
         <div className='flex flex-col gap-4'>

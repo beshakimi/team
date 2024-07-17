@@ -17,10 +17,14 @@ import WriteComent from '../Components/Comment/WriteComent';
 import RelatedPost from '../Components/Blog/RelatedPost';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import IsLoading from '../Components/isLoading/IsLoading';
+import Error from '../Components/Error/Error';
 
 
 export default function PostDetails() {
     const [PostDetails, setPostDetails] = useState([]);
+    const [isLoading, setIsloading] = useState(true);
+    const [error, setError] = useState(false);
     const { id } = useParams();
     const imageUrl = 'http://127.0.0.1:8000/';
     const shareUrl = window.location.href;
@@ -31,7 +35,22 @@ export default function PostDetails() {
             .then((res) => {
                 setPostDetails(res.data);
             })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(()=>{
+                setIsloading(false)
+            })
+                
     }, [id])
+
+    if (isLoading) {
+        return <IsLoading/>
+    }
+
+    if (error) {
+        return <Error error = {error}/>
+    }
     return (
         <div className='bg-orange-100 bg-opacity-50 py-10 mt-36'>
             <div className='w-[80%] mx-auto bg-white'>
