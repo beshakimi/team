@@ -26,11 +26,15 @@ import {
     TelegramShareButton,
     WhatsappShareButton,
 } from "react-share";
+import IsLoading from '../isLoading/IsLoading';
+import Error from '../Error/Error';
 
 export default function Profile({ Url, imageUrl, scrollToMessage }) {
     const [profile, setProfile] = useState("");
     const [role, setRole] = useState("");
     const [share, setShare] = useState(false);
+    const [isLoading, setIsloading] = useState(true);
+    const [error, setError] = useState(false);
     const shareUrl = window.location.href;
     const [isCopied, setIsCopied] = useState(false);
 
@@ -49,6 +53,12 @@ export default function Profile({ Url, imageUrl, scrollToMessage }) {
                 setProfile(res.data);
                 setRole(res.data.role);
             })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => {
+                setIsloading(false);
+            })
 
     }, []);
 
@@ -57,8 +67,14 @@ export default function Profile({ Url, imageUrl, scrollToMessage }) {
         saveAs(cvUrl, 'cv.pdf');
       };
 
- 
+    
+      if (isLoading) {
+        return <IsLoading/>
+      }
 
+      if (error) {
+        return <Error error = {error}/>
+      }
     
     return (
         <div className='pt-6 bg-white rounded-md flex flex-col gap-2 justify-center items-center'>
