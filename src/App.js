@@ -86,6 +86,9 @@ function App() {
           <Route path='/developer/:id' element={<TeamDetails />} />
           <Route path='/project/:id' element={<ProjectDetails />} />
           <Route path='/post/:id' element={<PostDetails />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signUp' element={<SignUp />} />
+
         </Routes>
         <Footer
           scrollToAbout={scrollToAbout}

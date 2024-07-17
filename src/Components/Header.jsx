@@ -92,7 +92,7 @@ export default function Header({
                     <div className='relative'>
                         <img src="media/users/1.jpg" alt="your profile" className='w-10 h-10 rounded-full object-cover border-2 border-[#e87a35] ' />
                     </div>
-                    <Link to='/login'>
+                    <Link onClick={() => {window.scrollTo(0,0)}} to='/login'>
                         <p className='border px-2 py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>Log in</p>
 
                     </Link>

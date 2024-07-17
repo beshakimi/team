@@ -6,13 +6,20 @@ import { FaShareNodes } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import axios from 'axios';
+import IsLoading from '../isLoading/IsLoading.jsx';
+import Error from '../Error/Error.jsx';
 
 export default function Blog(props) {
   const [LastPost, setLastPost] = useState([]);
   const [AllPosts, setAllPosts] = useState([]);
   const [page, changePage] = useState(1);
+  const [total, setTotal] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null); 
+
   const LastPostUrl = 'http://127.0.0.1:8000/posts/latest';
   const AllPostUrl = `http://127.0.0.1:8000/posts/?page=${page}`;
+  const totalPostUrl = 'http://127.0.0.1:8000/posts/total';
   const imageUrl = 'http://127.0.0.1:8000/';
 
   useEffect(() => {
@@ -27,11 +34,25 @@ export default function Blog(props) {
       .then((res) => {
         setAllPosts(res.data);
       })
+      .catch((error) =>{
+        setError(error.message);
+      })
+      .finally (()=>{
+        setIsLoading(false);
+      })
   }, [page]);
+
+  useEffect(()=>{
+    axios.get(totalPostUrl)
+    .then((res) => {
+      setTotal(res.data.total);
+    }
+    )
+  },[])
 
 
   const handlePreviosPage = () => {
-    if (page <= 1 ){
+    if (page <= 1) {
       changePage(page)
     }
     else {
@@ -40,7 +61,7 @@ export default function Blog(props) {
   }
 
   const handleNextPage = () => {
-    if (page <= AllPosts.length /4 ){
+    if (page <= total / 4) {
       changePage(page + 1)
     }
     else {
@@ -48,9 +69,18 @@ export default function Blog(props) {
     }
   }
 
+  if (isLoading) {
+    return <IsLoading/>
+  }
+
+  if (error) {
+    return <Error error ={error}/>
+  }
+
 
   return (
     <div className='bg-white p-6 rounded-sm flex flex-col gap-4'>
+      {/* < IsLoading/> */}
       <h1 id={props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
       <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
@@ -108,11 +138,14 @@ export default function Blog(props) {
                   </div>
                 </div>
 
-                <p className='text-xs text-gray-500 uppercase'>{new Intl.DateTimeFormat('en-US', {
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric'
-                }).format(new Date(post.created))}</p>
+                <p className='text-xs text-gray-500 uppercase'>
+                  {/* {new Intl.DateTimeFormat('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                  }).format(new Date(post.created))} */}
+                  {post.created}
+                </p>
 
                 <div className='flex flex-col gap-1'>
                   <h1 className='text-lg font-semibold'>{post.title}</h1>
@@ -144,10 +177,9 @@ export default function Blog(props) {
 
         {/* pagination */}
         <div className='flex gap-2'>
-          <MdOutlineKeyboardArrowLeft onClick={handlePreviosPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page <=1 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
+          <MdOutlineKeyboardArrowLeft onClick={handlePreviosPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page <= 1 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
           {page}
-          {AllPosts.count}
-          <MdKeyboardArrowRight onClick={handleNextPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page > AllPosts.length /4 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
+          <MdKeyboardArrowRight onClick={handleNextPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page >= total / 4 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
         </div>
 
       </div>

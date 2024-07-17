@@ -8,7 +8,7 @@ import { IoClose } from "react-icons/io5";
 
 export default function Login() {
     return (
-        <div className='bg-orange-100 h-screen py-10'>
+        <div className='bg-orange-100 bg-opacity-50 h-screen py-10 my-36'>
 
             <div className='grid grid-cols-5 lg:w-[60%] mx-auto'>
 
@@ -84,12 +84,12 @@ export default function Login() {
                         </div> */}
 
                         
-                        {/* <div className='flex gap-1 justify-center mt-4'>
+                        <div className='flex gap-1 justify-center mt-4'>
                             <p className='text-gray-500'>Haven't any account?</p>
-                            <Link to='/signUp'>
+                            <Link onClick={() => {window.scrollTo(0,0)}} to='/signUp'>
                                 <p className='font-semibold text-orange-400 hover:cursor-pointer hover:underline ease-in duration-150'>Sign Up</p>
                             </Link>
-                        </div> */}
+                        </div>
                     </form>
 
 

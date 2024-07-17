@@ -15,10 +15,10 @@ export default function ProjectDetails() {
         axios.get(url)
             .then((res) => {
                 setProjectDetails(res.data);
-            }, [])
-    })
+            })
+    }, [])
     return (
-        <div className='bg-orange-100 w-full h-full flex flex-col gap-10 mt-36'>
+        <div className='bg-orange-100 bg-opacity-50 w-full h-full flex flex-col gap-10 mt-36'>
 
             <div className='w-full lg:w-[60%] mx-auto flex flex-col gap-4 bg-white p-10 my-10 '>
                 <img src={`${imageUrl}${projectDetails.image}`} className='w-full max-h-96 object-cover' />
