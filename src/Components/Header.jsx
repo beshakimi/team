@@ -82,7 +82,7 @@ export default function Header({
 
                 {/* search */}
                 <form action="" className='mt-1 md:mt-0 h-5 w-44 md:w-auto md:h-9 overflow-hidden rounded-full md:rounded-md flex items-center bg-orange-100'>
-                    <input type="text" placeholder='Search ...' className='text-xs md:text-sm border md:border-2 border-orange-100 text-orange-500 placeholder:text-orange-400 rounded-l-full md:rounded-l-md bg-transparent h-full px-2 w-96 focus:border-orange-400 focus:outline-none' />
+                    <input type="text" placeholder='Search ...' className='text-xs md:text-sm border md:border-2 border-orange-100 text-orange-500 placeholder:text-orange-400 rounded-l-full md:rounded-l-md bg-transparent h-full px-2 w-60 lg:w-96 focus:border-orange-400 focus:outline-none' />
                     <button className='w-16 h-full bg-orange-400 flex justify-center items-center hover:bg-orange-500 transition-all duration-200'>
                         <FaSearch className='text-xs md:text-base text-white' />
                     </button>
@@ -93,7 +93,7 @@ export default function Header({
                         <img src="media/users/1.jpg" alt="your profile" className='w-5 h-5 md:w-10 md:h-10 rounded-full object-cover border md:border-2 border-[#e87a35] ' />
                     </div>
                     <Link onClick={() => {window.scrollTo(0,0)}} to='/login'>
-                        <p className='text-xs md:text-base border px-1 md:px-2 py-[2px] md:py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>Log in</p>
+                        <p className='text-xs md:text-base border px-1 md:px-2 py-[2px] md:py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150 whitespace-nowrap'>Log in</p>
 
                     </Link>
                 </div>

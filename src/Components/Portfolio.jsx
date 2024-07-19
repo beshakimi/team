@@ -43,17 +43,17 @@ export default function Portfolio(props) {
   
 
     return (
-        <div  className='bg-white p-6 rounded-sm flex flex-col gap-4'>
-            <h1 id ={props.id} className='text-3xl text-[#e87a35] font-bold w-full text-center '>Portfolio</h1>
-            <p className='w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
+        <div  className='bg-white p-6 rounded-sm flex flex-col gap-2 md:gap-4'>
+            <h1 id ={props.id} className='text-lg md:text-3xl text-[#e87a35] font-bold w-full text-center '>Portfolio</h1>
+            <p className='w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
             {/* menu  */}
-            <div className='flex justify-center'>
-                <div className='flex gap-4'>
-                    <h1 onClick={handleAllProject} className={`px-4 py-1 text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${allProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>All</h1>
-                    <h1 onClick={handleWebsitProject} className={`px-4 py-1 text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${websitProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Website</h1>
-                    <h1 onClick={handleMobileProject} className={`px-4 py-1 text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${mobileProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Mobile</h1>
-                    <h1 onClick={handleMachinLearningProject} className={`px-4 py-1 text-white font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${machinLearningProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Machin Learning</h1>
+            <div className='flex justify-center mt-1 md:mt-0'>
+                <div className='flex gap-2 md:gap-4'>
+                    <h1 onClick={handleAllProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${allProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>All</h1>
+                    <h1 onClick={handleWebsitProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${websitProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Website</h1>
+                    <h1 onClick={handleMobileProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${mobileProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Mobile</h1>
+                    <h1 onClick={handleMachinLearningProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${machinLearningProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Machin Learning</h1>
                 </div>
 
             </div>

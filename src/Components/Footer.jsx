@@ -38,16 +38,16 @@ export default function Footer({
     },[])
 
     return (
-        <div className='bg-white pt-10 mt-10 flex flex-col gap-6'>
+        <div className='bg-white pt-4 lg:pt-10 mt-4 lg:mt-10 flex flex-col gap-6'>
 
-            <div className='grid grid-cols-4 md:w-[80%] mx-auto'>
+            <div className='grid grid-cols-2 gap-y-6 lg:grid-cols-4 w-[90%] md:w-[80%] mx-auto'>
 
                 {/* Get in Touch */}
                 <div className='flex flex-col gap-2 text-gray-600'>
-                    <h1 className='text-orange-500 font-bold text-xl'>Get in Touch</h1>
+                    <h1 className='text-orange-500 font-bold text-lg md:text-xl'>Get in Touch</h1>
 
                     {/* address  */}
-                    <div className='flex gap-2 items-center mt-2'>
+                    <div className='flex gap-2 items-center md:mt-2'>
                         <FaLocationDot className='text-orange-500' />
                         <p className='text-sm'>Kabul Afghanistan</p>
                     </div>
@@ -67,23 +67,23 @@ export default function Footer({
                     {/* sotial icons */}
                     <div className='flex gap-2'>
                         <a href="">
-                            <img src="media/icons/social.png" alt="instagram" className='w-8 h-8' />
+                            <img src="media/icons/social.png" alt="instagram" className='w-5 h-5 md:w-8 md:h-8' />
                         </a>
 
                         <a href="">
-                            <img src="media/icons/linkden.png" alt="instagram" className='w-8 h-8' />
+                            <img src="media/icons/linkden.png" alt="instagram" className='w-5 h-5 md:w-8 md:h-8' />
                         </a>
 
                         <a href="">
-                            <img src="media/icons/whatsapp.png" alt="instagram" className='w-8 h-8' />
+                            <img src="media/icons/whatsapp.png" alt="instagram" className='w-5 h-5 md:w-8 md:h-8' />
                         </a>
 
                         <a href="">
-                            <img src="media/icons/facebook.png" alt="facebook" className='w-8 h-8' />
+                            <img src="media/icons/facebook.png" alt="facebook" className='w-5 h-5 md:w-8 md:h-8' />
                         </a>
 
                         <a href="" className=''>
-                            <img src="media/icons/github.png" alt="github" className='w-8 h-8' />
+                            <img src="media/icons/github.png" alt="github" className='w-5 h-5 md:w-8 md:h-8' />
                         </a>
 
                     </div>
@@ -92,9 +92,9 @@ export default function Footer({
 
                 {/* Services */}
                 <div className='flex flex-col gap-2 text-gray-600'>
-                    <h1 className='text-orange-500 font-bold text-xl'>Services</h1>
+                    <h1 className='text-orange-500 font-bold text-lg md:text-xl'>Services</h1>
 
-                    <div className='flex gap-2 items-center mt-2'>
+                    <div className='flex gap-2 items-center md:mt-2'>
                         <FaLaptopCode className='text-orange-500' />
                         <p className='text-sm'>Web Design</p>
                     </div>
@@ -119,9 +119,10 @@ export default function Footer({
 
                 {/* Quick Link */}
                 <div className='flex flex-col gap-2 text-gray-600'>
-                    <h1 className='text-orange-500 font-bold text-xl'>Quick Link</h1>
+                    <h1 className='text-orange-500 font-bold text-lg md:text-xl'>Quick Link</h1>
 
-                    <div className='flex gap-10 mt-2 text-sm'>
+                    <div className='flex gap-6 md:gap-10 md:mt-2 text-sm'>
+
                         <div className='flex flex-col gap-2'>
                             <Link to="/" className="border-b-2 border-white hover:border-orange-400 hover:text-gray-900 hover:cursor-pointer transition-all duration-150"
                                 onClick={() => {
@@ -173,8 +174,8 @@ export default function Footer({
 
                 {/* Our Team */}
                 <div className='flex flex-col gap-2 text-gray-600'>
-                    <h1 className='text-orange-500 font-bold text-xl'>Our Team</h1>
-                    <div className='grid grid-cols-4 gap-2 mt-2'>
+                    <h1 className='text-orange-500 font-bold text-lg md:text-xl'>Our Team</h1>
+                    <div className='grid grid-cols-4 gap-2 md:mt-2'>
                         {developersImage.map(developer => (
                             <img key={developer.id} src={`${imageUrl}${developer.avatar}`} alt="developer avatar" className=' w-12 h-12 object-cover' />
 
@@ -185,15 +186,15 @@ export default function Footer({
 
             </div>
 
-            <div className='md:w-[80%] mx-auto py-4 border-t-2 border-gray-400 grid grid-cols-3'>
-                <img src="media/logo/logo2.png" alt="logo" className='w-20' />
-                <div className='flex flex-col gap-1 items-center'>
-                    <p className=''>© 2024. All Rights Reserved.</p>
-                    <p className='text-sm flex gap-1 items-center'>Built by our team with <span className='text-red-500 text-xl'>♥</span></p>
+            <div className='w-[90%] md:w-[80%] mx-auto py-2 md:py-4 border-t-2 border-gray-400 grid grid-cols-3'>
+                <img src="media/logo/logo2.png" alt="logo" className='w-10 sm:w-14 md:w-20' />
+                <div className='flex flex-col md:gap-1 items-center whitespace-nowrap'>
+                    <p className='text-xs md:text-sm lg:text-base'>© 2024. All Rights Reserved.</p>
+                    <p className='text-xs md:text-sm lg:text-base flex gap-1 items-center'>Built by our team with <span className='text-red-500 text-xl'>♥</span></p>
                 </div>
 
                 <Link to="#" smooth={true} duration={500} onClick={scrollToTop} className='flex justify-end items-center'>
-                    <img src="media/icons/up-arrow.png" alt="" className='w-7 h-7 hover:cursor-pointer hover:animate-bounce transition-all duration-300' />
+                    <img src="media/icons/up-arrow.png" alt="" className='w-5 h-5 md:w-7 md:h-7 hover:cursor-pointer hover:animate-bounce transition-all duration-300' />
                 </Link>
             </div>
         </div>

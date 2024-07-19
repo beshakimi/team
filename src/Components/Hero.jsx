@@ -6,7 +6,7 @@ import { ReactTyped } from 'react-typed'
 
 export default function Hero() {
   return (
-    <div className='mt-36 w-full h-[500px] relative'>
+    <div className='mt-16 md:mt-36 w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] relative'>
       <img src="media/images/welcome.jpg" alt="welcome image" className='w-full h-full object-cover' />
       
       {/* navbar  */}
@@ -33,10 +33,10 @@ export default function Hero() {
 
       </div> */}
 
-      <div className='absolute top-16 left-0 w-1/2 h-full flex flex-col gap-8 pt-10 pl-32'>
-        <ReactTyped strings={["Welcome to our Website"]} typeSpeed={100} backSpeed={40}  loop className='text-5xl h-28 text-[#e87a35] leading-tight font-bold'/>
+      <div className='absolute top-8 md:top-16 left-0 text-center md:text-left w-full mx-auto md:w-1/2 h-full flex flex-col gap-2 md:gap-8 lg:pt-10 sm:pl-12 lg:pl-32'>
+        <ReactTyped strings={["Welcome to our Website"]} typeSpeed={100} backSpeed={40}  loop className='text-xl md:text-3xl lg:text-5xl md:h-28 text-[#e87a35] leading-tight font-bold'/>
        
-        <p className=''>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime sed ipsa eveniet doloremque, eligendi, placeat, magni quis rem soluta voluptates minus illum natus officia neque maiores sequi rerum at autem!</p>
+        <p className='text-xs md:text-base w-[70%] mx-auto md:w-full'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime sed ipsa eveniet doloremque, eligendi, placeat, magni quis rem soluta voluptates minus illum natus officia neque maiores sequi rerum at autem!</p>
 
       </div>
     </div>
