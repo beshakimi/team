@@ -84,10 +84,10 @@ export default function GetInTouch(props) {
             <div className='flex gap-2 items-center'>
 
                 {/* icon  */}
-                <div className='p-2 rounded-full border-2 text-gray-400 border-100'>
-                    <GrContact />
+                <div className='p-1 md:p-2 rounded-full border-2 text-gray-400 border-100'>
+                    <GrContact className='text-xs md:text-base' />
                 </div>
-                <h1 id ={props.id} className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>Get in Touch</h1>
+                <h1 id ={props.id} className='w-full border-b md:border-b-2 pb-1 text-orange-400 text-xs md:text-base font-semibold border-gray-200'>Get in Touch</h1>
             </div>
 
             <form action="" className='flex flex-col gap-4 mt-4'>

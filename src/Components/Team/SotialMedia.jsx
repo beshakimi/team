@@ -16,7 +16,7 @@ export default function SotialMedia({ Url }) {
             })
     }, [])
     return (
-        <div className='pb-2 bg-white rounded-md flex flex-col justify-center items-center'>
+        <div className='py-2  bg-white rounded-md flex flex-col justify-center items-center'>
 
             {/* facebook */}
             <a href={media.facebook_link} target='_blank' className='py-2 px-4 w-full flex text-sm text-gray-800 items-center justify-between border-b border-gray-300 hover:cursor-pointer hover:text-orange-400 ease-in duration-150'>

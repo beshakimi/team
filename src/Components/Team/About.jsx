@@ -36,42 +36,42 @@ export default function About({ url, imageUrl }) {
     return (
         <div className='flex flex-col gap-4'>
             {/* icon and name  */}
-            <div className='flex gap-2 items-center hover:cu'>
+            <div className='flex gap-2 items-center hover:cursor-pointer'>
 
                 {/* icon  */}
-                <div className='p-2 rounded-full border-2 text-gray-400 border-100'>
-                    <MdOutlineCastForEducation />
+                <div className='p-1 md:p-2 rounded-full border-2 text-gray-400 border-100'>
+                    <MdOutlineCastForEducation className='text-xs md:text-base' />
                 </div>
-                <p className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>About {developer.firstname} {developer.lastname}</p>
+                <p className='w-full border-b md:border-b-2 pb-1 text-orange-400 text-xs md:text-base font-semibold border-gray-200'>About {developer.firstname} {developer.lastname}</p>
             </div>
 
             {/* image and information */}
-            <div className='grid grid-cols-3 gap-6'>
-                <img src={`${imageUrl}${developer.detail_image}`} alt="image" className='col-span-1 w-full h-80 object-cover' />
+            <div className='grid grid-cols-3 gap-4 md:gap-6'>
+                <img src={`${imageUrl}${developer.detail_image}`} alt="image" className='col-span-1 w-full h-60 md:h-80 object-cover' />
 
-                <div className='col-span-2 flex flex-col gap-2'>
-                    <h1 className='font-semibold text-gray-700'>Hello I'm {developer.role}</h1>
-                    <p className='text-sm text-gray-600'>{developer.short_bio}</p>
+                <div className='col-span-2 flex flex-col gap-2 py-2 md:py-0'>
+                    <h1 className='text-xs md:text-base font-semibold text-gray-700'>Hello I'm {developer.role}</h1>
+                    <p className='text-xs md:text-sm text-gray-600'>{developer.short_bio}</p>
 
                     {/* phone,address,email  */}
-                    <div className='flex flex-col gap-2 mt-6'>
+                    <div className='flex flex-col gap-1 md:gap-2 mt-2 md:mt-6'>
 
                         {/* address  */}
                         <div className='flex gap-2 items-center mt-2'>
-                            <FaLocationDot className='text-orange-500' />
-                            <p className='text-sm text-gray-600'>{developer.location}</p>
+                            <FaLocationDot className='text-sm md:text-base text-orange-500' />
+                            <p className='text-xs md:text-sm text-gray-600'>{developer.location}</p>
                         </div>
 
                         {/* phone number  */}
                         <div className='flex gap-2 items-center'>
-                            <PiPhoneThin className='text-orange-500' />
-                            <p className='text-sm text-gray-600'>{developer.phone}</p>
+                            <PiPhoneThin className='text-sm md:text-base text-orange-500' />
+                            <p className='text-xs md:text-sm text-gray-600'>{developer.phone}</p>
                         </div>
 
                         {/* email address  */}
                         <div className='flex gap-2 items-center'>
-                            <HiOutlineMail className='text-orange-500' />
-                            <p className='text-sm text-gray-600'>{developer.email}</p>
+                            <HiOutlineMail className='text-sm md:text-base text-orange-500' />
+                            <p className='text-xs md:text-sm text-gray-600'>{developer.email}</p>
                         </div>
                     </div>
 

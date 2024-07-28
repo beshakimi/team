@@ -101,7 +101,7 @@ export default function Profile({ Url, imageUrl, scrollToMessage }) {
             </div>
 
             {/* shard, download cd, message  */}
-            <div className='mt-4 w-full flex gap-2  p-2'>
+            <div className='mt-4 w-full justify-center flex gap-2 p-2'>
 
                 {/* share */}
                 <div onClick={() => setShare(true)} className='flex gap-1 items-center rounded-full text-sm py-1 px-3 border border-orange-400 text-orange-500 hover:cursor-pointer hover:bg-orange-400 hover:text-white ease-in duration-150'>

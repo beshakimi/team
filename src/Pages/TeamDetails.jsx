@@ -25,11 +25,11 @@ export default function TeamDetails() {
       }
 
     return (
-        <div className='bg-orange-100 bg-opacity-50 h-full w-full mt-36 '>
-            <div className='flex gap-4 w-[80%] mx-auto py-10 '>
+        <div className='bg-orange-100 bg-opacity-50 h-full w-full mt-6 md:mt-36 '>
+            <div className='grid grid-cols-1 md:flex md:gap-4 w-full md:w-[80%] mx-auto py-10 '>
 
                 {/* profile  */}
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col md:gap-4'>
                     <Profile scrollToMessage ={scrollToMessage}  Url={aboutUrl} imageUrl={imageUrl} />
                     <SotialMedia Url={aboutUrl} />
 
