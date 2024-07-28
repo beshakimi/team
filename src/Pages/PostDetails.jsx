@@ -52,10 +52,10 @@ export default function PostDetails() {
         return <Error error = {error}/>
     }
     return (
-        <div className='bg-orange-100 bg-opacity-50 py-10 mt-36'>
-            <div className='w-[80%] mx-auto bg-white'>
-                <div className='flex flex-col gap-4 lg:w-[90%] mx-auto mt-6 p-6 xl:mb-32'>
-                    <h1 className='text-4xl font-semibold text-orange-600'>{PostDetails.title}</h1>
+        <div className='bg-orange-100 bg-opacity-50 py-10 mt-0 md:mt-36'>
+            <div className='w-full md:w-[80%] mx-auto bg-white'>
+                <div className='flex flex-col gap-2 md:gap-4 lg:w-[90%] mx-auto mt-6 p-6 xl:mb-32'>
+                    <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-orange-600'>{PostDetails.title}</h1>
 
                     {/* date, views, share  */}
                     <div className='flex gap-6'>
@@ -80,9 +80,9 @@ export default function PostDetails() {
                     </div>
 
                     {/* image and text  */}
-                    <div className='w-full flex flex-col gap-4 bg-white '>
+                    <div className='w-full flex flex-col gap-1 md:gap-4 bg-white '>
                         <div className='flex flex-col gap-2'>
-                            <img src={`${imageUrl}${PostDetails.image}`} className='w-full h-[400px] object-cover' />
+                            <img src={`${imageUrl}${PostDetails.image}`} className='w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover' />
                             <p className=''> Posted by {PostDetails.developer_firstname} {PostDetails.developer_lastname}</p>
 
                         </div>
@@ -93,29 +93,29 @@ export default function PostDetails() {
                     </div>
 
                     {/* share  */}
-                    <div className='flex gap-4'>
+                    <div className='grid grid-cols-2 md:flex gap-2 md:gap-4'>
 
                         {/* facebook */}
                         <FacebookShareButton url={shareUrl}>
-                            <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#2d7cfa] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
+                            <div className='flex gap-1 items-center text-sm md:text-base px-2 md:px-4 py-1 md:py-2 text-white bg-[#2d7cfa] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
                                 <TiSocialFacebook />
-                                <p>Share on Facebook</p>
+                                <p className='whitespace-nowrap'>Share on Facebook</p>
                             </div>
                         </FacebookShareButton>
 
                         {/* linkden */}
                         <LinkedinShareButton url={shareUrl}>
-                            <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#03a5fc] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
+                            <div className='flex gap-1 items-center text-sm md:text-base px-2 md:px-4 py-1 md:py-2 text-white bg-[#03a5fc] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
                                 <FaLinkedin />
-                                <p>Share on Linkedln</p>
+                                <p className='whitespace-nowrap'>Share on Linkedln</p>
                             </div>
                         </LinkedinShareButton>
 
                         {/* instagram */}
                         <InstapaperShareButton url={shareUrl}>
-                            <div className='flex gap-1 items-center px-4 py-2 text-white bg-[#b5417d] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
+                            <div className='flex gap-1 items-center text-sm md:text-base px-2 md:px-4 py-1 md:py-2 text-white bg-[#b5417d] rounded-full hover:underline hover:cursor-pointer hover:text-orange-200 ease-in duration-150'>
                                 <LuInstagram />
-                                <p>Share on Instagram</p>
+                                <p className='whitespace-nowrap'>Share on Instagram</p>
                             </div>
                         </InstapaperShareButton>
 

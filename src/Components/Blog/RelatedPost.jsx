@@ -29,45 +29,30 @@ export default function RelatedPost() {
 
     return (
         <div className='w-full flex flex-col gap-4 my-10'>
-            <h1 className='font-semibold text-lg'>Related Posts</h1>
+            <h1 className='font-semibold text-base md:text-lg'>Related Posts</h1>
 
-            <div className='w-full grid grid-cols-3 gap-6'>
+            <div className='w-full grid grid-cols-3 gap-2 md:gap-6'>
 
                 {/* post 1 */}
                 {RelatedPost.map((post) => (
-                    <div key={post.id} onClick={() => handleLinkClick(post.id)} className='flex flex-col gap-1 w-full bg-orange-100 p-4 rounded-sm hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
+                    <div key={post.id} onClick={() => handleLinkClick(post.id)} className='flex flex-col gap-1 w-full bg-orange-100 p-2 md:p-4 rounded-sm hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
 
                         {/* image */}
-                        <div className='w-full h-40 relative'>
+                        <div className='w-full h-16 sm:h-20 md:h-28 lg:h-40 relative'>
                             <img src={`${imageUrl}${post.image}`} alt="" className='w-full h-full  object-cover hover:scale-105 ease-in duration-200' />
                             <div className='absolute top-0 left-0 w-full h-full hover:cursor-pointer hover:bg-orange-500 hover:bg-opacity-25 ease-in duration-200'>
                             </div>
                         </div>
 
-                        <p className='text-xs text-gray-500 uppercase'>{post.created}</p>
+                        <p className='text-[8px] md:text-xs text-gray-500 uppercase'>{post.created}</p>
 
-                        <div className='flex flex-col gap-1'>
+                        <div className='flex flex-col md:gap-1'>
 
-                            <h1 className='text-lg font-semibold'>{post.title}</h1>
-                            <p className='text-gray-500 text-sm'>{post.body?.slice(1, 50)} ...</p>
+                            <h1 className='text-[9px] sm:text-xs md:text-lg font-semibold'>{post.title}</h1>
+                            <p className='text-gray-500 text-[9px] sm:text-xs md:text-sm'>{post.body?.slice(1, 50)} ...</p>
                         </div>
 
-                        {/* views  */}
-                        <div className='flex gap-8 mt-4'>
-
-                            {/* views  */}
-                            <div className='flex gap-1 items-center text-gray-500 text-xs'>
-                                <MdPreview />
-                                <p>12k Views</p>
-                            </div>
-
-                            {/* share  */}
-                            <div className='flex gap-1 items-center text-gray-500 text-xs'>
-                                <FaShareNodes />
-                                <p>125 Share</p>
-                            </div>
-
-                        </div>
+                        
                     </div>
                 ))
                 }

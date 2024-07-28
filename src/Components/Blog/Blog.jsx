@@ -149,10 +149,10 @@ export default function Blog(props) {
         </div>
 
         {/* pagination */}
-        <div className='flex gap-2'>
-          <MdOutlineKeyboardArrowLeft onClick={handlePreviosPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page <= 1 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
-          {page}
-          <MdKeyboardArrowRight onClick={handleNextPage} className={`w-7 h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page >= total / 4 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
+        <div className='flex gap-1 md:gap-2'>
+          <MdOutlineKeyboardArrowLeft onClick={handlePreviosPage} className={`w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page <= 1 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
+          <p className='text-xs sm:text-sm md:text-base'>{page}</p>
+          <MdKeyboardArrowRight onClick={handleNextPage} className={`w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 p-1 border border-orange-300 hover:cursor-pointer hover:bg-orange-300 ease-in duration-150 ${page >= total / 4 ? 'bg-orange-300 hover:cursor-default' : ''}`} />
         </div>
 
       </div>

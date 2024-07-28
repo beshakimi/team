@@ -22,25 +22,25 @@ export default function Experience() {
             <div className='flex gap-2 items-center'>
 
                 {/* icon  */}
-                <div className='p-2 rounded-full border-2 text-gray-400 border-100'>
-                    <FaNetworkWired />
+                <div className='p-1 md:p-2 rounded-full border-2 text-gray-400 border-100'>
+                    <FaNetworkWired className='text-xs md:text-base' />
                 </div>
-                <p className='w-full border-b-2 pb-1 text-orange-400 font-semibold border-gray-200'>Experience</p>
+                <p className='w-full border-b md:border-b-2 pb-1 text-orange-400 text-xs md:text-base font-semibold border-gray-200'>Experience</p>
             </div>
 
-            <div className='grid grid-cols-2 gap-x-4 mt-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-4 md:mt-8'>
 
                 {/* Experiences */}
                 {experiences.map((experience, index) => (
-                    <div key={experience.id} className='relative border-l-2 border-orange-400 ml-6'>
+                    <div key={experience.id} className='relative border-l-2 border-orange-400 ml-3 md:ml-6'>
 
-                        <div className='absolute top-[-10px] left-[-24px] flex items-center justify-center w-12 h-12 p-2 bg-gray-50 object-cover rounded-full border-2 border-orange-400'>
-                            <p className='text-xl font-bold '>{index + 1}</p>
+                        <div className='absolute top-0 md:top-[-10px] left-[-16px] md:left-[-24px] flex items-center justify-center w-8 h-8 md:w-12 md:h-12 p-2 bg-gray-50 object-cover rounded-full border-2 border-orange-400'>
+                            <p className='text-sm md:text-xl font-bold '>{index + 1}</p>
                         </div>
 
-                        <div className='flex flex-col gap-2 ml-8 pb-6'>
-                            <div className='flex gap-1 text-sm font-semibold'>
-                            <h1>{experience.role} in </h1>
+                        <div className='flex flex-col gap-1 md:gap-2 ml-6 md:ml-8 pb-6'>
+                            <div className='flex md:gap-1 text-sm font-semibold'>
+                            <h1 className='text-sm md:text-base'>{experience.role} in </h1>
                             <h1>{experience.company_title}</h1>
 
                             </div>
