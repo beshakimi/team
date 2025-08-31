@@ -4,6 +4,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import Developers from './Developers';
 import { useParams } from 'react-router-dom';
+import ImageLoader from '../ImageLoader';
 
 export default function About(props) {
 
@@ -13,7 +14,7 @@ export default function About(props) {
 
             {/* about our team  */}
             <div className='grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4'>
-                <img src="media/images/about.jpg" alt='About our team' className='w-full rounded-sm' />
+                <ImageLoader src="media/images/about.jpg" alt='About our team' className='w-full rounded-sm' />
 
                 <div className='p-4 flex flex-col gap-1 md:gap-4'>
                     <h1 id={props.id} className='text-lg md:text-3xl text-[#e87a35] font-bold'>About Our Team</h1>

@@ -3,6 +3,7 @@ import { MdOutlineCastForEducation } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { PiPhoneThin } from "react-icons/pi";
 import { HiOutlineMail } from "react-icons/hi";
+import ImageLoader from '../ImageLoader';
 
 export default function About({ developer }) {
 
@@ -12,7 +13,7 @@ export default function About({ developer }) {
     }
 
     return (
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-2 md:gap-4'>
             {/* icon and name */}
             <div className='flex gap-2 items-center hover:cursor-pointer'>
                 <div className='p-1 md:p-2 rounded-full border-2 text-gray-400 border-100'>
@@ -24,10 +25,10 @@ export default function About({ developer }) {
             </div>
 
             {/* image and information */}
-            <div className='grid grid-cols-3 gap-4 md:gap-6'>
-                <img src={developer.detail_image} alt="image" className='col-span-1 w-full h-60 md:h-80 object-cover' />
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6'>
+                <ImageLoader src={developer.detail_image} alt="image" className='hidden sm:block md:col-span-1 w-full h-60 md:h-80 object-cover' />
 
-                <div className='col-span-2 flex flex-col gap-2 py-2 md:py-0'>
+                <div className='md:col-span-2 flex flex-col gap-2 py-2 md:py-0'>
                     <h1 className='text-xs md:text-base font-semibold text-gray-700'>Hello I'm {developer.role}</h1>
                     <p className='text-xs md:text-sm text-gray-600'>{developer.bio}</p>
 

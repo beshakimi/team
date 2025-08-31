@@ -1,105 +1,100 @@
 // src/data/projectsData.js
 const projectsData = [
+  // --- Web Projects ---
   {
     id: 1,
     title: "E-commerce Website",
     description: "An online store with product catalog, shopping cart, and checkout system.",
-    image: "/images/project1.jpg",
-    video: "/videos/project1.mp4",
+    image: "/media/projects/1.jpg",
     technologies: ["React", "Tailwind CSS", "Node.js"],
     live_link: "https://example.com/project1",
-    github_link: "https://github.com/example/project1"
+    github_link: "https://github.com/example/project1",
+    category: "web",
   },
   {
     id: 2,
-    title: "Mobile App Project",
-    description: "This is a description of my mobile app project.",
-    image: "/images/project2.jpg",
-    video: "/videos/project2.mp4",
-    technologies: ["React Native", "Expo"],
+    title: "Portfolio Website",
+    description: "Personal portfolio showcasing projects, skills, and contact form.",
+    image: "/media/projects/2.jpg",
+    technologies: ["React", "Tailwind CSS"],
     live_link: "https://example.com/project2",
-    github_link: "https://github.com/example/project2"
+    github_link: "https://github.com/example/project2",
+    category: "web",
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description: "Personal portfolio showcasing projects, skills, and contact form.",
-    image: "/images/project3.jpg",
-    video: "/videos/project3.mp4",
-    technologies: ["React", "Tailwind CSS"],
-    live_link: "https://example.com/project3",
-    github_link: "https://github.com/example/project3"
-  },
-  {
-    id: 4,
     title: "Blog Platform",
     description: "A blog CMS where users can create, edit, and comment on posts.",
-    image: "/images/project4.jpg",
-    video: "/videos/project4.mp4",
+    image: "/media/projects/3.jpg",
     technologies: ["React", "Node.js", "Express"],
+    live_link: "https://example.com/project3",
+    github_link: "https://github.com/example/project3",
+    category: "web",
+  },
+
+  // --- Mobile Projects ---
+  {
+    id: 4,
+    title: "Mobile Chat App",
+    description: "A real-time chat app with groups, emojis, and push notifications.",
+    image: "/media/projects/4.jpg",
+    technologies: ["React Native", "Expo", "Firebase"],
     live_link: "https://example.com/project4",
-    github_link: "https://github.com/example/project4"
+    github_link: "https://github.com/example/project4",
+    category: "mobile",
   },
   {
     id: 5,
-    title: "Chat Application",
-    description: "A real-time chat application with group chats and emojis.",
-    image: "/images/project5.jpg",
-    video: "/videos/project5.mp4",
-    technologies: ["React", "Firebase"],
+    title: "Fitness Tracker",
+    description: "Track workouts, calories, and fitness goals over time.",
+    image: "/media/projects/5.webp",
+    technologies: ["React Native", "Firebase"],
     live_link: "https://example.com/project5",
-    github_link: "https://github.com/example/project5"
+    github_link: "https://github.com/example/project5",
+    category: "mobile",
   },
   {
     id: 6,
-    title: "Task Management App",
-    description: "An app to track tasks, deadlines, and progress for teams.",
-    image: "/images/project6.jpg",
-    video: "/videos/project6.mp4",
-    technologies: ["React", "Redux", "Node.js"],
+    title: "Recipe Sharing App",
+    description: "Users can share recipes, comment, and like posts.",
+    image: "/media/projects/6.webp",
+    technologies: ["React Native", "Expo"],
     live_link: "https://example.com/project6",
-    github_link: "https://github.com/example/project6"
+    github_link: "https://github.com/example/project6",
+    category: "mobile",
   },
+
+  // --- Machine Learning Projects ---
   {
     id: 7,
-    title: "Fitness Tracker",
-    description: "Track workouts, calories, and fitness goals over time.",
-    image: "/images/project7.jpg",
-    video: "/videos/project7.mp4",
-    technologies: ["React Native", "Expo", "Firebase"],
+    title: "Weather Prediction",
+    description: "Predict weather conditions using ML and external APIs.",
+    image: "/media/projects/7.jpg",
+    technologies: ["Python", "TensorFlow", "React"],
     live_link: "https://example.com/project7",
-    github_link: "https://github.com/example/project7"
+    github_link: "https://github.com/example/project7",
+    category: "ml",
   },
   {
     id: 8,
-    title: "Recipe Sharing Platform",
-    description: "Users can share recipes, comment, and like posts.",
-    image: "/images/project8.jpg",
-    video: "/videos/project8.mp4",
-    technologies: ["React", "Node.js", "MongoDB"],
+    title: "Image Classifier",
+    description: "A deep learning model to classify images into categories.",
+    image: "/media/projects/8.jpg",
+    technologies: ["Python", "Keras", "React"],
     live_link: "https://example.com/project8",
-    github_link: "https://github.com/example/project8"
+    github_link: "https://github.com/example/project8",
+    category: "ml",
   },
   {
     id: 9,
-    title: "Weather App",
-    description: "Displays weather data and forecast for any city.",
-    image: "/images/project9.jpg",
-    video: "/videos/project9.mp4",
-    technologies: ["React", "API Integration"],
+    title: "Chatbot Assistant",
+    description: "A machine learning powered chatbot with NLP support.",
+    image: "/media/projects/9.webp",
+    technologies: ["Python", "NLTK", "React"],
     live_link: "https://example.com/project9",
-    github_link: "https://github.com/example/project9"
+    github_link: "https://github.com/example/project9",
+    category: "ml",
   },
-  {
-    id: 10,
-    title: "Stock Market Dashboard",
-    description: "Visualizes stock data with charts and real-time updates.",
-    image: "/images/project10.jpg",
-    video: "/videos/project10.mp4",
-    technologies: ["React", "Chart.js", "Node.js"],
-    live_link: "https://example.com/project10",
-    github_link: "https://github.com/example/project10"
-  }
 ];
 
 export default projectsData;

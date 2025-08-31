@@ -11,6 +11,7 @@ import { BsPhoneFlip } from "react-icons/bs";
 import { IoServer } from "react-icons/io5";
 import { GiGlowingArtifact } from "react-icons/gi";
 import teamData from '../data/teamData';
+import ImageLoader from './ImageLoader';
 
 export default function Footer({
     scrollToHero,
@@ -48,11 +49,11 @@ export default function Footer({
                     </div>
 
                     <div className='flex gap-2 mt-2'>
-                        <img src="media/icons/social.png" alt="instagram" className='w-5 h-5 md:w-8 md:h-8' />
-                        <img src="media/icons/linkden.png" alt="linkedin" className='w-5 h-5 md:w-8 md:h-8' />
-                        <img src="media/icons/whatsapp.png" alt="whatsapp" className='w-5 h-5 md:w-8 md:h-8' />
-                        <img src="media/icons/facebook.png" alt="facebook" className='w-5 h-5 md:w-8 md:h-8' />
-                        <img src="media/icons/github.png" alt="github" className='w-5 h-5 md:w-8 md:h-8' />
+                        <ImageLoader src="media/icons/social.png" alt="instagram" className='w-5 h-5 md:w-8 md:h-8' loadingText={false} />
+                        <ImageLoader src="media/icons/linkden.png" alt="linkedin" className='w-5 h-5 md:w-8 md:h-8' loadingText={false} />
+                        <ImageLoader src="media/icons/whatsapp.png" alt="whatsapp" className='w-5 h-5 md:w-8 md:h-8' loadingText={false} />
+                        <ImageLoader src="media/icons/facebook.png" alt="facebook" className='w-5 h-5 md:w-8 md:h-8' loadingText={false} />
+                        <ImageLoader src="media/icons/github.png" alt="github" className='w-5 h-5 md:w-8 md:h-8' loadingText={false} />
                     </div>
                 </div>
 
@@ -95,16 +96,16 @@ export default function Footer({
                 </div>
 
                 {/* Our Team */}
-                {/* Our Team */}
                 <div className='flex flex-col gap-2 text-gray-600'>
                     <h1 className='text-orange-500 font-bold text-lg md:text-xl'>Our Team</h1>
                     <div className='grid grid-cols-4 gap-2 md:mt-2'>
                         {teamData.map(dev => (
-                            <img
+                            <ImageLoader
                                 key={dev.id}
                                 src={dev.profile_image}
                                 alt={`${dev.firstname} ${dev.lastname}`}
-                                className='w-12 h-12 object-cover rounded-full'
+                                className='min-w-10 h-10 md:w-12 md:h-12 object-cover rounded-full'
+                                loadingText={false}
                             />
                         ))}
                     </div>
@@ -114,15 +115,18 @@ export default function Footer({
             </div>
 
             <div className='w-[90%] md:w-[80%] mx-auto py-2 md:py-4 border-t-2 border-gray-400 grid grid-cols-3'>
-                <img src="media/logo/logo2.png" alt="logo" className='w-10 sm:w-14 md:w-20' />
+                <ImageLoader src="media/logo/logo2.png" alt="logo" className='w-10 sm:w-14 md:w-20' loadingText={false} />
                 <div className='flex flex-col md:gap-1 items-center whitespace-nowrap'>
-                    <p className='text-xs md:text-sm lg:text-base'>© 2024. All Rights Reserved.</p>
+                    <p className='text-xs md:text-sm lg:text-base'>
+                        © {new Date().getFullYear()}. All Rights Reserved.
+                    </p>
+
                     <p className='text-xs md:text-sm lg:text-base flex gap-1 items-center'>
-                        Built by our team with <span className='text-red-500 text-xl'>♥</span>
+                        Built by Jawid Hakimi with <span className='text-red-500 text-xl'>♥</span>
                     </p>
                 </div>
                 <Link to="#" onClick={scrollToTop} className='flex justify-end items-center'>
-                    <img src="media/icons/up-arrow.png" alt="" className='w-5 h-5 md:w-7 md:h-7 hover:cursor-pointer hover:animate-bounce transition-all duration-300' />
+                    <ImageLoader loadingText={false} src="media/icons/up-arrow.png" alt="" className='w-5 h-5 md:w-7 md:h-7 hover:cursor-pointer hover:animate-bounce transition-all duration-300' />
                 </Link>
             </div>
         </div>

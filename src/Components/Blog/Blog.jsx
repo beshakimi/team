@@ -5,6 +5,7 @@ import { MdKeyboardArrowRight, MdOutlineKeyboardArrowLeft } from "react-icons/md
 import blogPosts from '../../data/blogPosts';
 import IsLoading from '../isLoading/IsLoading.jsx';
 import Error from '../Error/Error.jsx';
+import ImageLoader from '../ImageLoader';
 
 export default function Blog(props) {
   const [page, changePage] = useState(1);
@@ -33,12 +34,12 @@ export default function Blog(props) {
       <h1 id={props.id} className='text-lg md:text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
       <p className='w-[90%] md:w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
 
-      <div className='grid grid-cols-2 gap-4 md:gap-6 my-4 md:my-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-4 md:my-8'>
         {/* LastPost */}
         <Link onClick={() => window.scrollTo(0, 0)} to={`post/${LastPost.id}`}>
           <div className='flex flex-col gap-2 md:gap-4 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
             <div className='w-full relative'>
-              <img src={LastPost.image} alt={LastPost.title} className='w-full hover:scale-105 ease-in duration-200' />
+              <ImageLoader src={LastPost.image} alt={LastPost.title} className='w-full h-40 md:h-full hover:scale-105 ease-in duration-200' />
               <div className='absolute top-0 left-0 w-full h-full hover:cursor-pointer hover:bg-orange-500 hover:bg-opacity-25 ease-in duration-200'></div>
             </div>
             <div className='flex flex-col gap-1 md:gap-2'>
@@ -56,8 +57,8 @@ export default function Blog(props) {
           {paginatedPosts.map(post => (
             <Link onClick={() => window.scrollTo(0, 0)} key={post.id} to={`post/${post.id}`}>
               <div className='flex flex-col gap-1 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
-                <div className='w-full h-16 md:h-20 lg:h-36 relative'>
-                  <img src={post.image} alt={post.title} className='w-full h-full object-cover hover:scale-105 ease-in duration-200' />
+                <div className='w-full h-20 lg:h-36 relative'>
+                  <ImageLoader src={post.image} alt={post.title} className='w-full h-full object-cover hover:scale-105 ease-in duration-200' />
                   <div className='absolute top-0 left-0 w-full h-full hover:cursor-pointer hover:bg-orange-500 hover:bg-opacity-25 ease-in duration-200'></div>
                 </div>
                 <p className='text-[9px] md:text-xs text-gray-500 uppercase'>{post.created}</p>

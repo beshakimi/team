@@ -1,72 +1,51 @@
+import { useState } from "react";
+import projectsData from "../data/projectsData";
+import ProjectCard from "./Portfolio/ProjectCard";
 
-import { useState } from 'react';
-import AllProjects from './Portfolio/AllProjects';
-import WebsiteProjects from './Portfolio/WebsitProjects';
-import MobileProjects from './Portfolio/MobileProjects';
-import MachinLearningProjects from './Portfolio/MachinLearningProjects';
+export default function Portfolio() {
+  const [filter, setFilter] = useState("all");
 
+  const filteredProjects =
+    filter === "all"
+      ? projectsData
+      : projectsData.filter((project) => project.category === filter);
 
-export default function Portfolio(props) {
-    const [allProjects, setAllProjects] = useState(true);
-    const [websitProjects, setWebstiProjects] = useState(false);
-    const [mobileProjects, setMobileProjects] = useState(false);
-    const [machinLearningProjects, setMachinLearningProjects] = useState(false);
+  return (
+    <div className="bg-white p-6 rounded-sm flex flex-col gap-4">
+      <h1 className="text-lg md:text-3xl text-[#e87a35] font-bold text-center">
+        Portfolio
+      </h1>
+      <p className="w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base">
+        Here are some of my projects. Click the tabs to filter by category.
+      </p>
 
-    const handleAllProject = () => {
-        setAllProjects(true);
-        setWebstiProjects(false);
-        setMobileProjects(false);
-        setMachinLearningProjects(false);
-    }
+      {/* Menu */}
+      <div className="flex justify-center gap-2 md:gap-4">
+        {["all", "web", "mobile", "ml"].map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setFilter(cat)}
+            className={`px-2 md:px-4 py-1 text-xs md:text-base font-semibold rounded-sm text-white text-nowrap ${
+              filter === cat ? "bg-slate-800" : "bg-orange-500"
+            }`}
+          >
+            {cat === "all"
+              ? "All"
+              : cat === "web"
+              ? "Website"
+              : cat === "mobile"
+              ? "Mobile"
+              : "Machine Learning"}
+          </button>
+        ))}
+      </div>
 
-    const handleWebsitProject = () => {
-        setWebstiProjects(true);
-        setAllProjects(false);
-        setMobileProjects(false);
-        setMachinLearningProjects(false);
-    }
-
-
-    const handleMobileProject = () => {
-        setMobileProjects(true);
-        setAllProjects(false);
-        setWebstiProjects(false);
-        setMachinLearningProjects(false);
-    }
-
-    const handleMachinLearningProject = () => {
-        setMachinLearningProjects(true);
-        setAllProjects(false);
-        setWebstiProjects(false);
-        setMobileProjects(false);
-    }
-  
-
-    return (
-        <div  className='bg-white p-6 rounded-sm flex flex-col gap-2 md:gap-4'>
-            <h1 id ={props.id} className='text-lg md:text-3xl text-[#e87a35] font-bold w-full text-center '>Portfolio</h1>
-            <p className='w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
-
-            {/* menu  */}
-            <div className='flex justify-center mt-1 md:mt-0'>
-                <div className='flex gap-2 md:gap-4'>
-                    <h1 onClick={handleAllProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${allProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>All</h1>
-                    <h1 onClick={handleWebsitProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${websitProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Website</h1>
-                    <h1 onClick={handleMobileProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${mobileProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Mobile</h1>
-                    <h1 onClick={handleMachinLearningProject} className={`px-4 py-1 text-white text-[10px] sm:text-xs md:text-base font-semibold rounded-sm hover:cursor-pointer hover:shadow-lg transition-all duration-150 ${machinLearningProjects ? 'bg-slate-800' : 'bg-orange-500'}`}>Machin Learning</h1>
-                </div>
-
-            </div>
-
-            <>
-            {allProjects && <AllProjects />}
-            {websitProjects && <WebsiteProjects />}
-            {mobileProjects && <MobileProjects />}
-            {machinLearningProjects && <MachinLearningProjects />}
-            </>
-
-
-
-        </div>
-    )
+      {/* Projects */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </div>
+  );
 }

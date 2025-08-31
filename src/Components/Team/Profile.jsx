@@ -6,6 +6,7 @@ import { FaShareNodes } from "react-icons/fa6";
 import { IoIosCloudDownload } from "react-icons/io";
 import { MdAttachEmail, MdOutlineContentCopy } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
+import ImageLoader from '../ImageLoader';
 
 export default function Profile({ scrollToMessage,developer }) {
     const [developers, setdeveloper] = useState({});
@@ -25,7 +26,7 @@ export default function Profile({ scrollToMessage,developer }) {
 
     return (
         <div className='pt-6 bg-white rounded-md flex flex-col gap-2 justify-center items-center'>
-            <img src={developer.profile_image} alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
+            <ImageLoader src={developer.profile_image} alt="avatar" className='p-[2px] w-28 h-28 object-cover rounded-full border-4 border-gray-100' />
             <h1 className='font-bold'>{developer.firstname} {developer.lastname}</h1>
             <ReactTyped
                 strings={[developer.role || ""]}
