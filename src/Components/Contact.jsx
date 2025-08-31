@@ -56,9 +56,12 @@ export default function Contact(props) {
             {successMessage && <div className=' fixed z-50 top-10 right-0 flex  w-full justify-center text-green-500'>
                 <p className='bg-orange-200 py-2 px-4 rounded-md'> {successMessage}</p>
             </div>}
-            
+
             <h1 id={props.id} className='text-lg md:text-3xl text-[#e87a35] font-bold w-full text-center '>Contact</h1>
-            <p className='w-[90%] md:w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
+            <p className='w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base text-gray-600'>
+                Have a question or want to work together? Fill out the form below and we’ll get back to you as soon as possible. We look forward to connecting with you!
+            </p>
+
 
             <div className='relative bg-orange-200 mt-20 md:mt-28 px-4 md:px-10 py-16 md:py-20 '>
                 {/* icons  */}
@@ -67,17 +70,17 @@ export default function Contact(props) {
                         <div className='flex flex-col gap-1 md:gap-2 p-4 justify-center items-center bg-[#e87a35] w-24 h-24 md:w-40 md:h-40 '>
                             <FaLocationDot className='w-8 h-8 md:w-16 md:h-16 text-white' />
                             <h1 className='text-[8px] md:text-xs whitespace-nowrap text-gray-700 font-bold uppercase'>Our Main Address</h1>
-                            <p className='text-[8px] md:text-sm whitespace-nowrap'>Kabul Afghanistan</p>
+                            <p className='text-[8px] md:text-sm whitespace-nowrap'>Berlin, Germany</p>
                         </div>
                         <div className='flex flex-col gap-1 md:gap-2 p-4 justify-center items-center bg-[#e87a35] w-24 h-24 md:w-40 md:h-40 '>
                             <PiPhoneThin className='w-8 h-8 md:w-16 md:h-16 text-white' />
                             <h1 className='text-[8px] md:text-xs whitespace-nowrap text-gray-700 font-bold uppercase'>Phone</h1>
-                            <p className='text-[8px] md:text-sm whitespace-nowrap'>+93 748294735</p>
+                            <p className='text-[8px] md:text-sm whitespace-nowrap'>+49 7987623179</p>
                         </div>
                         <div className='flex flex-col gap-1 md:gap-2 p-4 justify-center items-center bg-[#e87a35] w-24 h-24 md:w-40 md:h-40 '>
                             <HiOutlineMail className='w-8 h-8 md:w-16 md:h-16 text-white' />
                             <h1 className='text-[8px] md:text-xs whitespace-nowrap text-gray-700 font-bold uppercase'>Email</h1>
-                            <p className='text-[8px] md:text-sm whitespace-nowrap'>w.user2022@gmail.com</p>
+                            <p className='text-[8px] md:text-sm whitespace-nowrap'>code.brand@gmail.com</p>
                         </div>
                     </div>
                 </div>

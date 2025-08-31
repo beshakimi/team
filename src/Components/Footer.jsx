@@ -37,15 +37,15 @@ export default function Footer({
 
                     <div className='flex gap-2 items-center md:mt-2'>
                         <FaLocationDot className='text-orange-500' />
-                        <p className='text-sm'>Kabul Afghanistan</p>
+                        <p className='text-sm'>Berlin, Germany</p>
                     </div>
                     <div className='flex gap-2 items-center'>
                         <PiPhoneThin className='text-orange-500' />
-                        <p className='text-sm'>+93 798762319</p>
+                        <p className='text-sm'>+49 7987623179</p>
                     </div>
                     <div className='flex gap-2 items-center'>
                         <HiOutlineMail className='text-orange-500' />
-                        <p className='text-sm'>team@gmail.com</p>
+                        <p className='text-sm'>code.brand@gmail.com</p>
                     </div>
 
                     <div className='flex gap-2 mt-2'>
@@ -114,7 +114,7 @@ export default function Footer({
 
             </div>
 
-            <div className='w-[90%] md:w-[80%] mx-auto py-2 md:py-4 border-t-2 border-gray-400 grid grid-cols-3'>
+            <div className='w-[90%] md:w-[80%] mx-auto px-2 pt-2 pb-4 sm:pb-2 md:py-4 border-t-2 border-gray-400 grid grid-cols-3'>
                 <ImageLoader src="media/logo/logo2.png" alt="logo" className='w-10 sm:w-14 md:w-20' loadingText={false} />
                 <div className='flex flex-col md:gap-1 items-center whitespace-nowrap'>
                     <p className='text-xs md:text-sm lg:text-base'>

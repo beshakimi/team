@@ -11,7 +11,7 @@ export default function Blog(props) {
   const [page, changePage] = useState(1);
   const postsPerPage = 4;
 
- 
+
   const LastPost = blogPosts[0];
   const AllPosts = blogPosts.slice(1);
 
@@ -32,7 +32,10 @@ export default function Blog(props) {
   return (
     <div className='bg-white p-6 rounded-sm flex flex-col gap-2 md:gap-4'>
       <h1 id={props.id} className='text-lg md:text-3xl text-[#e87a35] font-bold w-full text-center '>Blog</h1>
-      <p className='w-[90%] md:w-[50%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
+      <p className='w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base text-gray-600'>
+        Stay updated with our latest articles, insights, and tutorials on web development, mobile apps, and tech innovations. Explore, learn, and get inspired!
+      </p>
+
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-4 md:my-8'>
         {/* LastPost */}
