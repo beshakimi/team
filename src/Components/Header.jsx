@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { animateScroll } from 'react-scroll'
 import { FaSearch } from "react-icons/fa";
 import Login from './User/Login';
+import ImageLoader from './ImageLoader';
 
 
 
@@ -23,7 +24,7 @@ export default function Header({
 
                 {/* logo  */}
                 <div className='ml-6 md:ml-10 flex items-center justify-center'>
-                    <img src="media/logo/logo1.png" alt="logo" className='w-14 md:w-32 object-cover' />
+                    <ImageLoader src="media/logo/logo1.png" alt="logo" className='w-10 md:w-32 object-cover' loadingText={false} />
                 </div>
 
                 <div style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 100%, 50% 50%, 0% 0%)' }} className='w-6 md:w-16 h-full bg-red-500'></div>
@@ -31,8 +32,8 @@ export default function Header({
             </div>
 
             {/* nav items  */}
-            <div className='absolute bottom-0 w-full h-fit py-2 md:py-3 bg-orange-400 flex justify-end xl:justify-center'>
-                <div className='flex gap-3 md:gap-4 items-center text-[10px]  md:text-base mr-2 sm:mr-4'>
+            <div className='absolute bottom-0 w-full h-fit py-2 md:py-3 bg-orange-400 flex justify-end xl:justify-center border'>
+                <div className='flex gap-2 md:gap-4 items-center text-[10px] md:text-base mr-2 sm:mr-4'>
 
                     <Link to="/" className=" text-white hover:cursor-pointer border-b-2 border-orange-400 hover:border-b-2 hover:border-white ease-in duration-150"
                         onClick={() => {
@@ -90,7 +91,7 @@ export default function Header({
 
                 <div className='flex gap-2 md:gap-4 h-fit mr-4 mt-1 md:mt-0 items-center'>
                     <div className='relative'>
-                        <img src="media/users/1.jpg" alt="your profile" className='w-5 h-5 md:min-w-[40px] md:min-h-[40px] rounded-full object-cover border md:border-2 border-[#e87a35] ' />
+                        <ImageLoader loadingText={false} src="media/users/1.jpg" alt="your profile" className='w-5 h-5 md:min-w-[40px] md:min-h-[40px] rounded-full object-cover border md:border-2 border-[#e87a35] ' />
                     </div>
                     <Link onClick={() => {window.scrollTo(0,0)}} to='/login'>
                         <p className='text-[10px] md:text-base border px-1 md:px-2 py-[2px] md:py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150 whitespace-nowrap'>Log in</p>

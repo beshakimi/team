@@ -19,6 +19,7 @@ import ShowComments from '../Components/Comment/ShowComments';
 import WriteComent from '../Components/Comment/WriteComent';
 import RelatedPost from '../Components/Blog/RelatedPost';
 import blogPosts from '../data/blogPosts'; 
+import ImageLoader from '../Components/ImageLoader';
 
 export default function PostDetails() {
     const [PostDetails, setPostDetails] = useState(null);
@@ -65,7 +66,7 @@ export default function PostDetails() {
                     {/* image and text */}
                     <div className='w-full flex flex-col gap-1 md:gap-4 bg-white'>
                         <div className='flex flex-col gap-2'>
-                            <img src={PostDetails.image} className='w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover' alt={PostDetails.title}/>
+                            <ImageLoader src={PostDetails.image} className='w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover' alt={PostDetails.title}/>
                             <p>Posted by {PostDetails.developer_firstname} {PostDetails.developer_lastname}</p>
                         </div>
                         <div className='pb-6 flex flex-col gap-2'>

@@ -27,12 +27,13 @@ export default function TeamDetails() {
   return (
     <div className='bg-orange-100 bg-opacity-50 h-full w-full mt-6 md:mt-36'>
       <div className='grid grid-cols-1 md:flex md:gap-4 w-full md:w-[80%] mx-auto py-10'>
+        
         <div className='flex flex-col md:gap-4'>
           <Profile scrollToMessage={scrollToMessage} developer={developer} />
           <SotialMedia developer={developer} />
         </div>
 
-        <div className='pb-10 w-full flex flex-col gap-6 bg-white rounded-md p-6'>
+        <div className='pb-10 w-full flex flex-col gap-3 md:gap-6 bg-white rounded-md p-6'>
           <About developer={developer} />
           <Skills developer={developer} />
           <Experience developer={developer} />

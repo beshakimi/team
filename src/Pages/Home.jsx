@@ -14,7 +14,7 @@ export default function Home(props) {
       
       <Hero />
 
-      <div className='flex flex-col gap-4 md:gap-10 w-full md:w-[80%] mx-auto md:mt-10'>
+      <div className='flex flex-col gap-4 md:gap-10 w-full md:w-[80%] md:mx-auto md:mt-10'>
         <About id = {props.aboutId}  />
         <Portfolio id = {props.portfolioId} />
         <Services id = {props.servicesId} />

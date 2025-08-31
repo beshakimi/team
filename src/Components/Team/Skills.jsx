@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { GiSkills } from "react-icons/gi";
+import ImageLoader from '../ImageLoader';
 
 export default function Skills({ developer }) {
 
@@ -17,14 +18,14 @@ export default function Skills({ developer }) {
                 {developer.skills.map(skill => (
                     <div key={skill.id} className='flex flex-col gap-1'>
                         <div className='flex gap-2 items-center'>
-                            <img src={skill.icon} className='p-1 w-6 h-6 md:p-2 md:w-10 md:h-10 rounded-sm bg-orange-500 text-white' />
+                            <ImageLoader src={skill.icon} className='p-0.5 sm:p-1 w-5 h-5 sm:w-6 sm:h-6 md:p-2 md:w-10 md:h-10 rounded-sm bg-orange-500 text-white' />
                             <div className='flex flex-col'>
                                 <h1 className='text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold uppercase text-orange-500'>{skill.title}</h1>
                                 <p className='text-orange-500 text-[8px] md:text-xs md:font-semibold'>{skill.description}</p>
                             </div>
                         </div>
 
-                        <div className='h-2 md:h-3 w-full rounded-sm border md:border-2 bg-white border-orange-500 overflow-hidden relative'>
+                        <div className='h-1 md:h-3 w-full rounded-sm border md:border-2 bg-white border-orange-500 overflow-hidden relative'>
                             <div className='absolute top-0 left-0 h-full bg-orange-500' style={{ width: `${skill.pro_level}%` }}></div>
                         </div>
                     </div>
