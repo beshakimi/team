@@ -10,7 +10,10 @@ export default function Developers() {
     return (
         <div className='w-full lg:w-[95%] mx-auto flex flex-col gap-1 md:gap-4 mt-10'>
             <h1 className='text-lg md:text-3xl text-[#e87a35] font-bold w-full text-center '>Our Team</h1>
-            <p className='w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, quasi distinctio.</p>
+            <p className='w-[90%] md:w-[50%] mx-auto text-center text-sm md:text-base text-gray-600'>
+                Our team creates innovative web and mobile solutions.
+            </p>
+
             <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-4 lg:mt-10'>
                 {teamData.map(developer => (
                     <Link onClick={() => window.scrollTo(0, 0)} key={developer.id} to={`/developer/${developer.id}`}>
