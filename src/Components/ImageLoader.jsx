@@ -6,7 +6,7 @@ const ImageLoader = ({ src, alt, className, loadingText }) => {
   return (
     <div className={`relative ${className}`}>
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
+        <div className={`absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse ${className}`}>
           {/* اگر loadingText برابر false باشد، متن نمایش داده نمی‌شود */}
           {loadingText !== false && (
             <span className="text-gray-400">{loadingText || "Loading..."}</span>
