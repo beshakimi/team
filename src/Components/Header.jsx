@@ -90,9 +90,9 @@ export default function Header({
                 </form>
 
                 <div className='flex gap-2 md:gap-4 h-fit mr-4 mt-1 md:mt-0 items-center'>
-                    <div className='relative'>
-                        <ImageLoader loadingText={false} src="media/users/1.jpg" alt="your profile" className='w-5 h-5 md:min-w-[40px] md:min-h-[40px] rounded-full object-cover border md:border-2 border-[#e87a35] ' />
-                    </div>
+                   
+                        <ImageLoader loadingText={false} src="media/users/1.jpg" alt="your profile" className='w-5 h-5 md:min-w-[40px] md:min-h-[40px] rounded-full object-cover border border-[#e87a35] ' />
+                    
                     <Link onClick={() => {window.scrollTo(0,0)}} to='/login'>
                         <p className='text-[10px] md:text-base border px-1 md:px-2 py-[2px] md:py-1 rounded-md h-fit flex items-center text-orange-400 border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150 whitespace-nowrap'>Log in</p>
 

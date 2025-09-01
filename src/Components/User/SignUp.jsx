@@ -54,13 +54,13 @@ export default function SignUp() {
     }
 
     return (
-        <div className='bg-orange-100 bg-opacity-50 h-screen py-10 my-36'>
+        <div className='bg-orange-100 bg-opacity-50 h-screen py-10 md:my-36 flex justify-center items-center'>
 
-            <div className='grid grid-cols-5 lg:w-[60%] mx-auto mt-6 mb-10'>
+            <div className='grid grid-cols-1 md:grid-cols-5 lg:w-[60%] mx-auto mt-6 mb-10'>
 
-                <img src="media/blog/5.jpg" alt="" className='col-span-3 h-[420px] object-cover' />
+                <img src="media/blog/5.jpg" alt="" className='col-span-3 h-[420px] object-cover hidden md:block' />
 
-                <div className='col-span-2 px-6 flex flex-col gap-4 bg-white justify-center relative'>
+                <div className='md:col-span-2 py-6 md:py-0 rounded-md px-6 flex flex-col gap-4 bg-white justify-center relative w-[90vw] md:w-full mx-auto'>
 
                     {successMessage && (
                         <div className='absolute top-2 left-1/2 -translate-x-1/2 bg-green-200 text-green-800 py-1 px-4 rounded-md'>

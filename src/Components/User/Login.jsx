@@ -8,13 +8,13 @@ import { IoClose } from "react-icons/io5";
 
 export default function Login() {
     return (
-        <div className='bg-orange-100 bg-opacity-50 h-screen py-10 my-36'>
+        <div className='bg-orange-100 bg-opacity-50 h-screen py-10 md:my-36 flex justify-center items-center'>
 
-            <div className='grid grid-cols-5 lg:w-[60%] mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-5 lg:w-[60%] mx-auto '>
 
-                <img src="media/images/login.jpg" alt="" className='col-span-3 h-[400px] object-cover' />
+                <img src="media/images/login.jpg" alt="" className='col-span-3 h-[400px] object-cover hidden md:block' />
 
-                <div className='col-span-2 px-6 flex flex-col gap-4 bg-white justify-center relative'>
+                <div className='md:col-span-2 py-6 md:py-0 px-6 rounded-md flex flex-col gap-4 bg-white justify-center relative w-[90vw] md:w-full mx-auto'>
 
                     {/* close icon  */}
                     <Link to='/' className='absolute top-4 right-4 w-6 h-6 flex items-center justify-center text-orange-400 rounded-md border border-orange-400 hover:cursor-pointer hover:text-white hover:bg-orange-400 ease-in duration-150'>

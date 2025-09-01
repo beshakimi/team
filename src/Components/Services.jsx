@@ -36,7 +36,7 @@ export default function Services(props) {
 
                         {/* 02 */}
                         <div className='absolute right-0 lg:right-10 transform translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white rounded-full border-4 border-orange-400 p-1 shadow-lg'>
-                            <div className='w-full h-full rounded-full bg-orange-400 flex items-center justify-center font-bold text-white text-[9px] md:text-sm lg:text-lg'>02</div>
+                            <div className='w-full h-full rounded-full bg-orange-400 flex items-center justify-center font-bold text-white text-[9px] md:text-sm lg:text-lg'>01</div>
                             <div className='absolute right-2 md:right-4 transform translate-y-4 md:translate-y-6 w-2 h-2 lg:w-5 lg:h-5 rounded-full bg-orange-400'></div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ export default function Services(props) {
 
                         {/* 03 */}
                         <div className='absolute right-0 lg:right-10 transform translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white rounded-full border-4 border-pink-400 p-1 shadow-lg'>
-                            <div className='w-full h-full rounded-full bg-pink-400 flex items-center justify-center font-bold text-white text-[9px] md:text-sm lg:text-lg'>03</div>
+                            <div className='w-full h-full rounded-full bg-pink-400 flex items-center justify-center font-bold text-white text-[9px] md:text-sm lg:text-lg'>02</div>
                             <div className='absolute right-2 md:right-4 transform translate-y-4 md:translate-y-6 w-2 h-2 lg:w-5 lg:h-5 rounded-full bg-pink-400'></div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ export default function Services(props) {
 
                         {/* 01 */}
                         <div className='absolute right-0 lg:right-10 transform translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white rounded-full border-4 border-yellow-400 p-1 shadow-lg'>
-                            <div className='w-full h-full rounded-full bg-yellow-400 flex items-center justify-center font-bold text-white text-[9px] md:text-sm lg:text-lg'>01</div>
+                            <div className='w-full h-full rounded-full bg-yellow-400 flex items-center justify-center font-bold text-white text-[9px] md:text-sm lg:text-lg'>03</div>
                             <div className='absolute right-2 md:right-4 transform translate-y-4 md:translate-y-6 w-2 h-2 lg:w-5 lg:h-5 rounded-full bg-yellow-400'></div>
                         </div>
                     </div>
