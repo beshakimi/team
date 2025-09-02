@@ -18,7 +18,7 @@ export default function Skills({ developer }) {
                 {developer.skills.map(skill => (
                     <div key={skill.id} className='flex flex-col gap-1'>
                         <div className='flex gap-2 items-center'>
-                            <ImageLoader src={skill.icon} className='p-0.5 sm:p-1 w-5 h-5 sm:w-6 sm:h-6 md:p-2 md:w-10 md:h-10 rounded-sm bg-orange-500 text-white' />
+                            <img src={skill.icon} className='p-0.5 sm:p-1 w-5 h-5 sm:w-6 sm:h-6 md:p-2 md:w-10 md:h-10 rounded-sm bg-orange-500 text-white object-cover' />
                             <div className='flex flex-col'>
                                 <h1 className='text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold uppercase text-orange-500'>{skill.title}</h1>
                                 <p className='text-orange-500 text-[8px] md:text-xs md:font-semibold'>{skill.description}</p>

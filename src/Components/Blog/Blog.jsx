@@ -42,7 +42,7 @@ export default function Blog(props) {
         <Link onClick={() => window.scrollTo(0, 0)} to={`post/${LastPost.id}`}>
           <div className='flex flex-col gap-2 md:gap-4 w-full hover:cursor-pointer hover:text-orange-500 ease-in duration-150'>
             <div className='w-full relative'>
-              <ImageLoader src={LastPost.image} alt={LastPost.title} className='w-full h-40 md:h-full hover:scale-105 ease-in duration-200' />
+              <ImageLoader src={LastPost.image} alt={LastPost.title} className='w-full h-40 md:h-96 hover:scale-105 ease-in duration-200' />
               <div className='absolute top-0 left-0 w-full h-full hover:cursor-pointer hover:bg-orange-500 hover:bg-opacity-25 ease-in duration-200'></div>
             </div>
             <div className='flex flex-col gap-1 md:gap-2'>
