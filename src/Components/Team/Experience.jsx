@@ -15,7 +15,7 @@ export default function Experience({ developer }) {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-4 md:mt-8'>
                 {developer.experience.map((experience, index) => (
                     <div key={experience.id} className='relative border-l-2 border-orange-400 ml-3 md:ml-6'>
-                        <div className='absolute top-0 md:top-[-10px] left-[-16px] md:left-[-24px] flex items-center justify-center w-8 h-8 md:w-12 md:h-12 p-2 bg-gray-50 object-cover rounded-full border-2 border-orange-400'>
+                        <div className='absolute top-0 md:top-[-10px] left-[-16px] md:left-[-24px] flex items-center justify-center w-8 h-8 md:w-10 md:h-10 xl:w-12 xl:h-12 p-2 bg-gray-50 object-cover rounded-full border-2 border-orange-400'>
                             <p className='text-sm md:text-xl font-bold '>{index + 1}</p>
                         </div>
 
