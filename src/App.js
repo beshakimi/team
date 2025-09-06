@@ -1,71 +1,55 @@
-
+import { useEffect, useState, Suspense, lazy } from 'react';
 import './App.css';
-import AnimatedCursor from "react-animated-cursor"
-import Home from './Pages/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './Components/User/Login';
-import SignUp from './Components/User/SignUp';
-import ForgetPassword from './Components/User/ForgetPassword';
-import TeamDetails from './Pages/TeamDetails';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import ProjectDetails from './Pages/ProjectDetails';
-import { ImOpt } from 'react-icons/im';
-import PostDetails from './Pages/PostDetails';
+import IsLoading from './Components/isLoading/IsLoading';
+
+// 🔹 lazy load برای روت‌ها
+const Home = lazy(() => import('./Pages/Home'));
+const TeamDetails = lazy(() => import('./Pages/TeamDetails'));
+const ProjectDetails = lazy(() => import('./Pages/ProjectDetails'));
+const PostDetails = lazy(() => import('./Pages/PostDetails'));
+const Login = lazy(() => import('./Components/User/Login'));
+const SignUp = lazy(() => import('./Components/User/SignUp'));
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  // فقط برای Splash Loader (بار اول ورود)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   function scrollToAbout() {
-    const aboutElement = document.getElementById('about');
-    if (aboutElement) {
-      aboutElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const el = document.getElementById('about');
+    el?.scrollIntoView({ behavior: 'smooth' });
   }
-
   function scrollToPortfolio() {
-    const portfolioElement = document.getElementById('portfolio');
-    if (portfolioElement) {
-      portfolioElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const el = document.getElementById('portfolio');
+    el?.scrollIntoView({ behavior: 'smooth' });
   }
-
-
   function scrollToServices() {
-    const servicesElement = document.getElementById('services');
-    if (servicesElement) {
-      servicesElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const el = document.getElementById('services');
+    el?.scrollIntoView({ behavior: 'smooth' });
   }
-
   function scrollToBlog() {
-    const blogElement = document.getElementById('blog');
-    if (blogElement) {
-      blogElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const el = document.getElementById('blog');
+    el?.scrollIntoView({ behavior: 'smooth' });
   }
-
   function scrollToContact() {
-    const contactElement = document.getElementById('contact');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const el = document.getElementById('contact');
+    el?.scrollIntoView({ behavior: 'smooth' });
   }
 
+  // 🔹 فقط بار اول ورود → Splash Loader
+  if (loading) {
+    return <IsLoading />;
+  }
 
   return (
-    <div className='w-full'>
-      {/* <AnimatedCursor 
-    innerSize={8}
-    outerSize={35}
-    innerScale={1}
-    outerScale={2}
-    outerAlpha={0}
-    outerStyle={{
-      border: '2px solid rgb(235, 137, 52)'
-    }}
-    /> */}
-
-
+    <div className="w-full">
       <BrowserRouter>
         <Header
           scrollToAbout={scrollToAbout}
@@ -74,22 +58,25 @@ function App() {
           scrollToBlog={scrollToBlog}
           scrollToContact={scrollToContact}
         />
-        <Routes>
-          <Route path='/' element={<Home
-            aboutId='about'
-            portfolioId='portfolio'
-            servicesId='services'
-            blogId='blog'
-            contactId='contact'
 
-          />} />
-          <Route path='/developer/:id' element={<TeamDetails />} />
-          <Route path='/project/:id' element={<ProjectDetails />} />
-          <Route path='/post/:id' element={<PostDetails />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signUp' element={<SignUp />} />
+        {/* 🔹 وقتی هر Route آماده نیست → Loader */}
+        <Suspense fallback={<IsLoading />}>
+          <Routes>
+            <Route path="/" element={<Home
+              aboutId="about"
+              portfolioId="portfolio"
+              servicesId="services"
+              blogId="blog"
+              contactId="contact"
+            />} />
+            <Route path="/developer/:id" element={<TeamDetails />} />
+            <Route path="/project/:id" element={<ProjectDetails />} />
+            <Route path="/post/:id" element={<PostDetails />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signUp" element={<SignUp />} />
+          </Routes>
+        </Suspense>
 
-        </Routes>
         <Footer
           scrollToAbout={scrollToAbout}
           scrollToPortfolio={scrollToPortfolio}
@@ -98,10 +85,8 @@ function App() {
           scrollToContact={scrollToContact}
         />
       </BrowserRouter>
-
-
     </div>
-  )
+  );
 }
 
 export default App;
